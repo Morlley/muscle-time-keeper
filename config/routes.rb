@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root to: "calendar#index"
+  root to: "workouts#index"
 end
