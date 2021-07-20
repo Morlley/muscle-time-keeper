@@ -1,0 +1,11 @@
+<% two_week_days.each_with_index do |day, i| %>
+  <% if i >= index_min && i <= index_max %>
+    <div class="one-day">
+      <div class="date">
+        <%= day[:month] %>/<%= day[:date] %><%= day[:wday] %>
+      </div>
+      <div class="workout-records">
+      </div>
+    </div>
+  <% end %>
+<% end %>
