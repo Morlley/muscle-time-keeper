@@ -1,1 +1,10 @@
-<h1>トップページです</h1>
+<div class="main">
+  <div class="calendar">
+    <div class="week" id="upper-week">
+      <%= render partial: "week", locals: {two_week_days: @two_week_days, index_min: 0, index_max: 6} %>
+    </div>  
+    <div class="week" id="lower-week">
+      <%= render partial: "week", locals: {two_week_days: @two_week_days, index_min: 7, index_max: 13} %>
+    </div>
+  </div>
+</div>
