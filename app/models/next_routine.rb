@@ -1,7 +1,5 @@
-class Routine < ApplicationRecord
-  belongs_to :user
-  has_many :workouts
-  has_many :next_routines
+class NextRoutine < ApplicationRecord
+  belongs_to :routine
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :set
