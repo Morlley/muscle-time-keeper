@@ -1,24 +1,60 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
+| birthday           | date   | null: false |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :routines
+- has_many :workouts
 
-* Database creation
+## routinesテーブル
 
-* Database initialization
+| Column  | Type       | Options           |
+| ------- | ---------- | ----------------- |
+| menu    | string     | null: false       |
+| set_id  | integer    | null: false       |
+| rest_id | integer    | null: false       |
+| user_id | references | foreign_key: true |
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- belongs_to :user
+- has_many :next_routines
+- has_many :workouts
 
-* ...
+## next_routinesテーブル
+
+| Column     | Type       | Options           |
+| ---------- | ---------- | ----------------- |
+| menu       | string     | null: false       |
+| set_id     | integer    | null: false       |
+| rest _id   | integer    | null: false       |
+| routine_id | references | foreign_key: true |
+
+
+### Association
+
+- belongs_to :routine
+
+## workoutsテーブル
+
+| Column       | Type       | Options           |
+| ------------ | ---------- | ----------------- |
+| workout_date | date       | null: false       |
+| user_id      | references | foreign_key: true |
+| routine_id   | references | foreign_key: true |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :routine
