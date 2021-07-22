@@ -20,8 +20,8 @@
 | Column  | Type       | Options           |
 | ------- | ---------- | ----------------- |
 | menu    | string     | null: false       |
-| set     | integer    | null: false       |
-| rest    | integer    | null: false       |
+| set_id  | integer    | null: false       |
+| rest_id | integer    | null: false       |
 | user_id | references | foreign_key: true |
 
 
@@ -36,8 +36,8 @@
 | Column     | Type       | Options           |
 | ---------- | ---------- | ----------------- |
 | menu       | string     | null: false       |
-| set        | integer    | null: false       |
-| rest       | integer    | null: false       |
+| set_id     | integer    | null: false       |
+| rest _id   | integer    | null: false       |
 | routine_id | references | foreign_key: true |
 
 
