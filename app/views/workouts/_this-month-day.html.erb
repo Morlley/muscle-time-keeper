@@ -1,0 +1,12 @@
+<%# this-month-dayかつ日曜日もしくは土曜日かを判断 %>
+<% if i % 7 == 0 || i % 7 == 6 %>
+  <div class="this-month-day sunday_or_saturday">
+    <%= render partial: "get-day", locals: {day: day, i: i} %>
+  </div>
+<% else %>
+
+<%# 日曜日と土曜日以外のthis-month-dayが取得される %>
+  <div class="this-month-day">
+    <%= render partial: "get-day", locals: {day: day, i: i} %>
+  </div>
+<% end %>
