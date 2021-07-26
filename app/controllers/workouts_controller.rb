@@ -1,16 +1,22 @@
 class WorkoutsController < ApplicationController
 
   def index
+    set_date
     get_calendar
   end
 
   private
 
   def set_date
-    i = 74
-    @today_date = Date.today.months_ago(i)
-    @beginning_date = @today_date.beginning_of_month
-    @end_date = @today_date.end_of_month
+    if params[:monthNum].present?
+      @month_num = params[:monthNum].to_i
+    else
+      @month_num = 0
+    end
+
+    @date = Date.today.advance(months: @month_num)
+    @beginning_date = @date.beginning_of_month
+    @end_date = @date.end_of_month
   end
 
   def get_this_month_days
@@ -41,7 +47,6 @@ class WorkoutsController < ApplicationController
   end
 
   def get_calendar
-    set_date
     get_this_month_days
     get_pre_days
     get_post_days

@@ -1,10 +1,10 @@
 <p>
 <%# 今月の1日かどうかを判断 %>
 <% if i <= 6 && day.day == 1 %>
-  <%= @today_date.month %>月
+  <%= @date.month %>月
   <%# 来月の1日かどうかを判断 %>
 <% elsif i >= 28 && day.day == 1 %>
-  <%= @today_date.next_month.month %>月
+  <%= @date.next_month.month %>月
 <% end %>
 
 <%# 日付を表示 %>

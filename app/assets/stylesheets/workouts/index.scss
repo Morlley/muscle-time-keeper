@@ -1,23 +1,48 @@
 // カレンダー部分のcss
 .calendar-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin-top: 10px;
-}
-
-.to-last-month :active {
-  filter: opacity(0.5);
-}
-
-.to-next-month :active {
-  filter: opacity(0.5);
+  text-align: center;
 }
 
 .month {
   font-size: 45px;
   font-weight: bold;
   margin: 0 50px;
+}
+
+.move-month {
+  display: flex;
+  justify-content: center;
+}
+
+.month-btn {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 50px;
+  color: 	#666666;
+  background-color: blanchedalmond;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+} 
+
+.month-btn:active {
+  filter: opacity(0.5);
+}
+
+#today {
+  width: 100px;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 2px;
+}
+
+.today:active{
+  filter: opacity(0.5);
 }
 
 .calendar {
@@ -68,7 +93,7 @@
 }
 
 .sunday_or_saturday {
-  background-color: #AAAAAA;
+  background-color: blanchedalmond;
 }
 
 .this-month-day.sunday_or_saturday {

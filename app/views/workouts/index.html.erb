@@ -1,7 +1,13 @@
 <div class="calendar-header">
-  <div class="to-last-month"><%= image_tag "triangle.png", :width => "50" %></div>
-  <p class="month"><%= @today_date.year %>年<%= @today_date.month %>月</p>
-  <div class="to-next-month"><%= image_tag "triangle-right.png", :width => "50" %></div>
+    <p class="month"><%= @date.year %>年<%= @date.month %>月</p>
+  <form action="/" method="GET" id="move-month-form">
+    <div class="move-month">
+      <button type="button" class="month-btn" id="to-last-month"><</button>
+      <bottun type="button" class="month-btn" id="today">今日</bottun>
+      <button type="button" class="month-btn" id="to-next-month">></button>
+    </div>
+    <input type="hidden" name="monthNum" id="input-move" value=<%=@month_num%>> 
+  </form>
 </div>
 
 <div class="calendar">
