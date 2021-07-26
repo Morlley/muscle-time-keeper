@@ -14,7 +14,7 @@ function moveMonth (){
     moveMonthForm.submit();
   });
 
-  const today = document.getElementById("today");
+  const today = document.getElementById("move-today");
   today.addEventListener("click",() => {
     monthInput.value = 0;
     moveMonthForm.submit();

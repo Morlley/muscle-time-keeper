@@ -34,7 +34,7 @@
   filter: opacity(0.5);
 }
 
-#today {
+#move-today {
   width: 100px;
   font-size: 30px;
   font-weight: bold;
@@ -61,6 +61,8 @@
   min-width: 168px;
   width: calc(80% / 7);
   border: 1px solid gray;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .wday-h {
@@ -81,10 +83,16 @@
   width: calc(80% / 7);
   border: 1px solid gray;
   padding: 1px;
+  text-align: right;
   
-  p {
-    text-align: right;
+  span {
     margin-bottom: 3px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  li {
+    text-align: center;
   }
 }
 
@@ -97,7 +105,14 @@
 }
 
 .this-month-day.sunday_or_saturday {
-  p {
+  span {
     color:#777777;
   }
+}
+
+.today {
+  background-color: #BEFF15;
+  color: #FF5192;
+  padding: 3px;
+  border-radius: 5px;
 }

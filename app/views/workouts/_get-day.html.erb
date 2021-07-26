@@ -1,4 +1,10 @@
-<p>
+<%# 今日の日付を識別 %>
+<% if day == @todays_date %>
+  <span class="today">
+<% else %>
+  <span>
+<% end %>
+
 <%# 今月の1日かどうかを判断 %>
 <% if i <= 6 && day.day == 1 %>
   <%= @date.month %>月
@@ -9,7 +15,8 @@
 
 <%# 日付を表示 %>
 <%= day.day %>日
-</p>
+</span>
+
 <ul>
   <li class="workout-log">実施したワークアウト</li>
 </ul>
