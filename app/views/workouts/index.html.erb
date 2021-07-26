@@ -1,10 +1,45 @@
-<div class="main">
-  <div class="calendar">
-    <div class="week" id="upper-week">
-      <%= render partial: "week", locals: {two_week_days: @two_week_days, index_min: 0, index_max: 6} %>
-    </div>  
-    <div class="week" id="lower-week">
-      <%= render partial: "week", locals: {two_week_days: @two_week_days, index_min: 7, index_max: 13} %>
+<div class="calendar-header">
+    <p class="month"><%= @date.year %>年<%= @date.month %>月</p>
+  <form action="/" method="GET" id="move-month-form">
+    <div class="move-month">
+      <button type="button" class="month-btn" id="to-last-month"><</button>
+      <bottun type="button" class="month-btn" id="today">今日</bottun>
+      <button type="button" class="month-btn" id="to-next-month">></button>
     </div>
-  </div>
+    <input type="hidden" name="monthNum" id="input-move" value=<%=@month_num%>> 
+  </form>
+</div>
+
+<div class="calendar">
+    <div class="wdays">
+      <div class="wday-h">日</div>
+      <div class="wday">月</div>
+      <div class="wday">火</div>
+      <div class="wday">水</div>
+      <div class="wday">木</div>
+      <div class="wday">金</div>
+      <div class="wday-h">土</div> 
+    </div> 
+    <% @calendar.each_with_index do |day, i| %>
+      <%# （div始） 横1列を取得するために日曜日がどうかを判断 %>
+      <% if i % 7 == 0 %>
+        <div class="week">
+      <% end %>
+
+        <%# 先月の日付かどうかを判断 %>
+        <% if  i <= 5 && day.day >= 25 %>
+          <%= render partial: "pre-day", locals: {day: day, i: i} %>
+        <%# 来月の日付かどうかを判断 %>
+        <% elsif i >= 29 && day.day <= 6 %>
+            <%= render partial: "post-day", locals: {day: day, i: i} %>
+        <%# 今月の日付かどうかを判断 %>
+        <% else %>
+            <%= render partial: "this-month-day", locals: {day: day, i: i} %>
+        <% end %>
+
+      <%# (div終) 横1列を取得するために土曜日かどうかを判断 %>
+      <% if (i + 1) % 7 == 0 %>
+        </div>
+      <% end %>
+    <% end %>  
 </div>

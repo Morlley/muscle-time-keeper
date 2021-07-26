@@ -1,0 +1,12 @@
+<%# post-dayかつ日曜日もしくは土曜日かを判断 %>
+<% if i % 7 == 0 || i % 7 == 6 %>
+  <div class="post-day sunday_or_saturday">
+    <%= render partial: "get-day", locals: {day: day, i: i} %>
+  </div>
+<% else %>
+
+<%# 日曜日と土曜日以外のpost-dayが取得される %>
+  <div class="post-day">
+    <%= render partial: "get-day", locals: {day: day, i: i} %>
+  </div>
+<% end %>

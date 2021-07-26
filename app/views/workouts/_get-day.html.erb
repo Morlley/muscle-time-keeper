@@ -1,0 +1,15 @@
+<p>
+<%# 今月の1日かどうかを判断 %>
+<% if i <= 6 && day.day == 1 %>
+  <%= @date.month %>月
+  <%# 来月の1日かどうかを判断 %>
+<% elsif i >= 28 && day.day == 1 %>
+  <%= @date.next_month.month %>月
+<% end %>
+
+<%# 日付を表示 %>
+<%= day.day %>日
+</p>
+<ul>
+  <li class="workout-log">実施したワークアウト</li>
+</ul>
