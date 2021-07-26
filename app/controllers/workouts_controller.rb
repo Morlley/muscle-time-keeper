@@ -14,7 +14,8 @@ class WorkoutsController < ApplicationController
       @month_num = 0
     end
 
-    @date = Date.today.advance(months: @month_num)
+    @todays_date = Date.today
+    @date = @todays_date.advance(months: @month_num)
     @beginning_date = @date.beginning_of_month
     @end_date = @date.end_of_month
   end

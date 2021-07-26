@@ -3,7 +3,7 @@
   <form action="/" method="GET" id="move-month-form">
     <div class="move-month">
       <button type="button" class="month-btn" id="to-last-month"><</button>
-      <bottun type="button" class="month-btn" id="today">今日</bottun>
+      <bottun type="button" class="month-btn" id="move-today">今日</bottun>
       <button type="button" class="month-btn" id="to-next-month">></button>
     </div>
     <input type="hidden" name="monthNum" id="input-move" value=<%=@month_num%>> 
@@ -20,6 +20,7 @@
       <div class="wday">金</div>
       <div class="wday-h">土</div> 
     </div> 
+
     <% @calendar.each_with_index do |day, i| %>
       <%# （div始） 横1列を取得するために日曜日がどうかを判断 %>
       <% if i % 7 == 0 %>
