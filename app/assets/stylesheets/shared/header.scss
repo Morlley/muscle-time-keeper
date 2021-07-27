@@ -1,0 +1,81 @@
+header {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #EEFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #EEEEEE;
+  padding: 2px 70px;
+}
+
+.header-link {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-delay: 0s;
+  transition-timing-function: linear;
+  color: #666666;
+}
+
+
+.header-link:hover {
+  filter: brightness(1.5);
+  color: #BB0000;
+  border-color: #BB0000;
+}
+
+.search {
+  font-size: 20px;
+  border: 2px solid #666666;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.sign-up {
+  margin: 0 60px 0 100px;
+}
+
+.user-hover {
+  height: 70px;
+  width: 70px;
+  padding: 5px;
+  margin: 0 60px 0 100px;
+}
+
+.user-logo {
+  width: 60px;
+  border: 2px solid #666666;
+  border-radius: 50px;
+  padding: 9px;
+  cursor: pointer;
+}
+
+
+
+.show-user-list {
+  position: absolute;
+  top: 69px;
+  right: 100px;
+  box-shadow: 0 0 8px gray;
+
+  li {
+    border: 1px solid #EEEEEE;
+    padding: 10px;
+  }
+}
+
+.arrow {
+  margin-left: 10px;
+  font-weight: bold;
+  color:#666666;
+}
