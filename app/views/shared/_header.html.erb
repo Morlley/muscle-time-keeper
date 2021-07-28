@@ -5,10 +5,13 @@
   <% end %>
   <div class="nav">
     <ul class="header-right">
-      <li><%= link_to "ログイン", "#", class: "login header-link" %></li>
-      <li><%= link_to "新規登録", new_user_registration_path, class: "sign-up header-link" %></li>
-      <%#<li><%= link_to "ワークアウトを開始", "#", class: "start-workout header-link" </li>
-      <li class="user-hover user"><%= image_tag "user-logo.png", class: "user-logo header-link", width: "20" </li>%>
+      <% if user_signed_in? %>
+        <li><%= link_to "ワークアウトを開始", "#", class: "start-workout header-link" %></li>
+        <li class="user-hover user"><%= image_tag "user-logo.png", class: "user-logo header-link", width: "20" %></li>
+      <% else %>
+        <li><%= link_to "ログイン", "#", class: "login header-link" %></li>
+        <li><%= link_to "新規登録", new_user_registration_path, class: "sign-up header-link" %></li>
+      <% end %>
     </ul>
 
     <ul class="show-user-list user hidden" id="user-list">
