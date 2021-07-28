@@ -10,7 +10,7 @@ class User < ApplicationRecord
   end
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers'
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'は半角英数記号で入力してください'
 
   has_many :routines
   has_many :workouts
