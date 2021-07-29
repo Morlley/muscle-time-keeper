@@ -1,34 +1,60 @@
-<%= render "shared/second-header"%>
+<div class="login_contents">
+  <div class="apps-wrap">
+    <div class="apps-logo-wrap">
+      <%= link_to image_tag("logo2.png", class:"apps-logo"), root_path %>
+    </div>
+    <div class="apps-info-wrap">
+      <ul class="apps-info-list">
+        <li class="apps-info">ワークアウトとインターバルを自動で管理</li>
+        <li class="apps-info">オリジナルの筋トレメニューを作成</li>
+        <li class="apps-info">筋トレの進捗状況を管理</li>
+      </ul>
+    </div>
+  </div>
 
-<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
-<div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      会員情報入力
-    </h1>
-  </div>
-  <div class='login-flash-message'>
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">メールアドレス</label>
-      <span class="indispensable">必須</span>
+  <div class="how-to-login">
+    <%= form_with model: @user, url: user_session_path, class: 'email-login-wrap', local: true do |f| %>
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">メールアドレス</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">パスワード</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
+      </div>
+      <div class='login-btn'>
+        <%= f.submit "ログイン" ,class:"login-red-btn" %>
+      </div>
+    <% end %>
+    <%= link_to "パスワードをお忘れですか？", "#" %>
+    <div class="sns-login">
+      <h2 class="sns-header">SNSアカウントをお持ちの方</h2>
+      <div class="sns-login-wrap">
+        <%= link_to user_facebook_omniauth_authorize_path, method: :post, class: "facebook-login" do %>
+          <span class="fab fa-facebook-square"></span>
+        <% end %>
+        <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "google-login" do %>
+          <span class="fab fa-google-plus-square"></span>
+        <% end %>
+      </div>
     </div>
-    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">パスワード</label>
-      <span class="indispensable">必須</span>
+    <div class="login-border"></div>
+    <div class="to-registration">
+      <p>アカウントをお持ちでない場合はこちらから</p>
+      <p id="display-registration-modal">新規作成</p>
     </div>
-    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
   </div>
-  <div class='login-btn'>
-    <%= f.submit "ログイン" ,class:"login-red-btn" %>
-  </div>
+
 </div>
-<% end %>
 
-<%= render "shared/second-footer"%>
+<%= render "shared/third-footer" %>

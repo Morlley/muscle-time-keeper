@@ -1,0 +1,6 @@
+.third-footer {
+  width: 100%;
+  background-color: #EEFFFF;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,106 @@
+.login_contents {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 60px 40px;
+}
+
+.apps-wrap {
+  width: 100%;
+}
+
+.apps-info {
+  width: 10%;
+}
+
+.apps-logo {
+  width: 40%;
+  margin-left: 10%;
+}
+
+.apps-info-wrap {
+  text-align: center;
+}
+
+.apps-info-list {
+  margin-top: 30px;
+}
+
+.apps-info {
+  width: 100%;
+  font-size: 2vw;
+  color: #AAAAAA;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.how-to-login {
+  width: 80%;
+  text-align: center;
+  border-left: 2px  solid #EEEEEE;
+}
+
+.email-login-wrap {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+
+.login-btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.login-red-btn {
+  width: 100%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+}
+
+.sns-login {
+  margin-top: 15px;
+}
+
+.sns-login-wrap {
+  margin-top: 15px;
+}
+
+.facebook-login {
+  font-size: 35px;
+  color: #3B5998;
+  margin-right: 30px;
+}
+
+.google-login {
+  font-size: 35px;
+  color: #DB4437;
+}
+
+.login-border{
+  width: 50%;
+  border: 1px solid #EEE;
+  margin: 0 auto;
+}
+
+.to-registration {
+  margin-top: 15px;
+  color: #666666;
+}
+
+#display-registration-modal {
+  color: #0000EE;
+  cursor: pointer;
+}
+#display-registration-modal:active {
+  color: #FE0000;
+}

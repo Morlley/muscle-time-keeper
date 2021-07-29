@@ -6,35 +6,6 @@
   
 }
 
-.apps-wrap {
-  width: 100%;
-}
-
-.apps-info {
-  width: 10%;
-}
-
-.apps-logo {
-  width: 40%;
-  margin-left: 10%;
-}
-
-.apps-info-wrap {
-  text-align: center;
-}
-
-.apps-info-list {
-  margin-top: 30px;
-}
-
-.apps-info {
-  width: 100%;
-  font-size: 2vw;
-  color: #AAAAAA;
-  display: inline-block;
-  margin-bottom: 40px;
-}
-
 .how-to-register {
   display: flex;
   flex-direction: column;
@@ -68,7 +39,7 @@
 }
 
 .sns-header {
-  color: #00FF00;
+  color: #666666;
   font-weight: bold;
   font-size: 20px;
 }
@@ -81,3 +52,4 @@
 .google-registration {
   background-color: #DB4437;
 }
+
