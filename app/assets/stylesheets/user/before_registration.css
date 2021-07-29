@@ -1,0 +1,83 @@
+.before_registration_contents {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 40px 20px;
+  
+}
+
+.apps-wrap {
+  width: 100%;
+}
+
+.apps-info {
+  width: 10%;
+}
+
+.apps-logo {
+  width: 40%;
+  margin-left: 10%;
+}
+
+.apps-info-wrap {
+  text-align: center;
+}
+
+.apps-info-list {
+  margin-top: 30px;
+}
+
+.apps-info {
+  width: 100%;
+  font-size: 2vw;
+  color: #AAAAAA;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.how-to-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  text-align: center;
+  border-left: 2px  solid #EEEEEE;
+}
+
+.email-registration-wrap {
+  margin: 50px 0;
+}
+
+.email-registration {
+  background-color:#AAAAAA;
+}
+
+.registration-common {
+  margin: 0 auto;
+  width: 60%;
+  color: white;
+  border-radius: 5px;
+  font-size: 25px;
+  padding: 2px;
+  display: block;
+}
+
+.fab, .fas {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.sns-header {
+  color: #00FF00;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.facebook-registration {
+  background-color: #3B5998;
+  margin: 30px auto;
+}
+
+.google-registration {
+  background-color: #DB4437;
+}
