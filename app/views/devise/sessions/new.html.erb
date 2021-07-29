@@ -57,4 +57,28 @@
 
 </div>
 
+<%# (始)新規登録モーダル %>
+<div class="registration-modal-wrapper" id="registration-modal">
+  <div class="how-to-register">
+    <div id="close-modal">
+      <span class="fas fa-times"></span>
+    </div>
+    <div class="email-registration-wrap">
+      <%= link_to new_user_registration_path, class: "email-registration registration-common" do %>
+        <span class="fas fa-envelope-square"></span>メールアドレスで登録
+      <% end %>
+    </div>
+    <div class="sns-registration-wrap">
+      <h2 class="sns-header">SNSアカウントをお持ちの方</h2>
+      <%= link_to user_facebook_omniauth_authorize_path, method: :post, class: "facebook-registration registration-common" do %>
+        <span class="fab fa-facebook-square"></span>Facebookで登録
+      <% end %>
+      <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "google-registration registration-common" do %>
+        <span class="fab fa-google-plus-square"></span>Google+で登録
+      <% end %>
+    </div>
+  </div>
+</div>
+<%# (終)新規登録モーダル %>
+
 <%= render "shared/third-footer" %>

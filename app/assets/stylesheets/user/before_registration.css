@@ -1,22 +1,43 @@
-.before_registration_contents {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  padding: 40px 20px;
-  
+.registration-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  display: none;
 }
 
 .how-to-register {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 80%;
   text-align: center;
-  border-left: 2px  solid #EEEEEE;
+  width: 450px;
+  height: auto;
+  background-color: #e6ecf0;
+  border: 2px  solid #EEE;
+  border-radius: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+}
+
+.fa-times-circle {
+}
+
+#close-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+  font-size: 34px;
+  text-align: center;
 }
 
 .email-registration-wrap {
-  margin: 50px 0;
+  margin-bottom: 30px;
 }
 
 .email-registration {
@@ -25,7 +46,7 @@
 
 .registration-common {
   margin: 0 auto;
-  width: 60%;
+  width: 100%;
   color: white;
   border-radius: 5px;
   font-size: 25px;
