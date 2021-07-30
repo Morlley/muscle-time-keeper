@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def me
-    
+    @user = User.find(params[:id])
+    @birthday = @user.birthday
   end
 end

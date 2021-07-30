@@ -3,7 +3,28 @@
 <div class="user-contents">
   <%= render "sid-bar" %>
   <div class="user-info-wrap">
-    
+    <div class="basic-info">
+      <div class="user-info-header">基本情報</div>
+      <ul>
+        <li class="row">
+          <div class="name">Nickname</div>
+          <div class="property"><%= @user.nickname %></div>
+        </li>
+        <li class="row">
+          <div class="name">Email</div>
+          <div class="property"><%= @user.email %></div>
+        </li>
+      </ul>
+    </div>
+    <div class="profile">
+      <div class="user-info-header">プロフィール</div>
+      <ul>
+        <li class="row">
+          <div class="name">生年月日</div>
+          <div class="property"><%= @birthday.year %>年 <%= @birthday.month %>月 <%= @birthday.day %>日</div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
