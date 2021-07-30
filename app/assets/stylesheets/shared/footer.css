@@ -1,0 +1,11 @@
+.first-footer {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  background-color: #EEFFFF;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 100;
+}

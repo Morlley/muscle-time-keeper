@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_22_074249) do
+ActiveRecord::Schema.define(version: 2021_07_28_103008) do
 
   create_table "next_routines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "menu", null: false
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2021_07_22_074249) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_routines_on_user_id"
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_07_22_074249) do
 
   add_foreign_key "next_routines", "routines"
   add_foreign_key "routines", "users"
+  add_foreign_key "sns_credentials", "users"
   add_foreign_key "workouts", "routines"
   add_foreign_key "workouts", "users"
 end

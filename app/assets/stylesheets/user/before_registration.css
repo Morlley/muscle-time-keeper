@@ -1,0 +1,76 @@
+.registration-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  display: none;
+}
+
+.how-to-register {
+  text-align: center;
+  width: 450px;
+  height: auto;
+  background-color: #e6ecf0;
+  border: 2px  solid #EEE;
+  border-radius: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+}
+
+.fa-times-circle {
+}
+
+#close-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+  font-size: 34px;
+  text-align: center;
+}
+
+.email-registration-wrap {
+  margin-bottom: 30px;
+}
+
+.email-registration {
+  background-color:#AAAAAA;
+}
+
+.registration-common {
+  margin: 0 auto;
+  width: 100%;
+  color: white;
+  border-radius: 5px;
+  font-size: 25px;
+  padding: 2px;
+  display: block;
+}
+
+.fab, .fas {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.sns-header {
+  color: #666666;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.facebook-registration {
+  background-color: #3B5998;
+  margin: 30px auto;
+}
+
+.google-registration {
+  background-color: #DB4437;
+}
+

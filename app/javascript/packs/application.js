@@ -8,6 +8,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("../move_month")
 require("../user_show")
+require("../registration_modal")
+require("jquery")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
