@@ -4,5 +4,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "workouts#index"
-  resources :users, only: :new
+  resources :users, only: :show do
+    member do
+      get "me"
+    end
+  end
 end

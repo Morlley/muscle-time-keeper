@@ -1,0 +1,14 @@
+<div class="sid-bar">
+  <ul class="sid-bar-lists">
+    <%= link_to user_path(current_user.id) do %>
+      <li class="sid-bar-list" id="routines-bar">
+        ルーティン一覧
+      </li>
+    <% end %>
+    <%= link_to me_user_path(current_user.id) do %>
+      <li class="sid-bar-list" id="user-info-bar">
+        ユーザー情報
+      </li>
+    <% end %>
+  </ul>
+</div>

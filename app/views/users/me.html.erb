@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+
+<div class="user-contents">
+  <%= render "sid-bar" %>
+  <div class="user-info-wrap">
+    
+  </div>
+</div>
+
+<%# 選択中のサイドバーの背景色を変えるJS %>
+<script>
+  const sidBar = document.getElementById("user-info-bar");
+  sidBar.setAttribute("style", "background-color: rgba(230, 230, 230, 0.8);");
+</script>
+
+<%= render "shared/footer" %>
