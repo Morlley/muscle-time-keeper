@@ -106,7 +106,7 @@
 }
 
 .this-month-day.sunday_or_saturday {
-  span {
+  .not-today {
     color:#777777;
   }
 }
