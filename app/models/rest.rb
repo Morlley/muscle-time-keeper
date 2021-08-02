@@ -14,4 +14,4 @@ class Rest < ActiveHash::Base
   include ActiveHash::Associations
   has_many :routines
   has_many :next_routines
-  end
+end

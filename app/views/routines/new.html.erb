@@ -1,2 +1,22 @@
-<h1>Routines#new</h1>
-<p>Find me in app/views/routines/new.html.erb</p>
+<%= render "shared/second-header" %>
+<div class="new-routine">
+  <h1>ルーティン新規作成</h1>
+  <%= form_with model: @routine, local: true do |form|  %>
+  
+  <%= render 'shared/error_messages', model: form.object %>
+  
+  <%= render "form", f: form %>
+  
+    <div class="next-routines">
+      <%= link_to_add_association "メニューの追加", form, :next_routines,
+        data: { association_insertion_method: 'append' } %>
+        <%= form.fields_for :next_routines do |next_routine| %>
+          <%= render "next_routine_fields", f: next_routine %>
+        <% end %>
+    </div>
+  
+    <div class="confirm-btn-contents">
+      <%= form.submit "確認画面へ", class: "confirm-btn" %>
+    </div>
+  <% end %>
+</div>

@@ -1,4 +1,4 @@
-class Set < ActiveHash::Base
+class SetCount < ActiveHash::Base
   self.data = [
     { id: 1, name: "--" },
     { id: 2, name: 1 },
@@ -16,4 +16,5 @@ class Set < ActiveHash::Base
   include ActiveHash::Associations
   has_many :routines
   has_many :next_routines
-  end
+  
+end
