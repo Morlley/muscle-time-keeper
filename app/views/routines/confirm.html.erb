@@ -1,0 +1,39 @@
+<%= render "shared/second-header" %>
+
+<div class="confirm-routine-wrap">
+  <%= form_with model: @routine, local: true do |form|  %>
+    <%# hiddenのinputでcreateアクションにデータを送る %>
+    <div class="hidden">
+      <%= render "form", f: form %>
+      <%= form.fields_for :next_routines do |next_routine| %>
+        <%= render "form", f: next_routine %>
+      <% end %>
+    </div>
+    <%# ここまで  %>
+
+    <div class="confirm-routine">
+      <p><%= @routine.menu %></p>
+      <p><%= @routine.set_count.name %>セット</p>
+      <p><%= @routine.rest.name %></p>
+    </div>
+
+    <% if @next_routines.present? %>
+      <div class="confirm-routine">
+        <% @next_routines.each do |next_routine| %>
+          <p><%= next_routine[:menu] %></p>
+          <p><%= next_routine[:set_count_id] %></p>
+          <p><%= next_routine[:rest_id] %></p>
+        <% end %>
+      </div>
+    <% end %>
+    
+    <div class="action-contents">
+      <div class="back-btn-content">
+        <%= form.submit "戻る", name: "back", class: "back-btn" %>
+      </div>
+      <div class="create-btn-content">
+        <%= form.submit "作成", class: "create-btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>
