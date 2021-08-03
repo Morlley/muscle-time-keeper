@@ -12,6 +12,7 @@
     <%# ここまで  %>
 
     <div class="confirm-routine">
+      <p>1つ目のメニュー</p>
       <p><%= @routine.menu %></p>
       <p><%= @routine.set_count.name %>セット</p>
       <p><%= @routine.rest.name %></p>
@@ -19,14 +20,15 @@
 
     <% if @next_routines.present? %>
       <div class="confirm-routine">
-        <% @next_routines.each do |next_routine| %>
+        <% @next_routines.each_with_index do |next_routine, i| %>
+          <p><%= i + 2 %>つ目のメニュー</p>
           <p><%= next_routine[:menu] %></p>
           <p><%= next_routine[:set_count_id] %></p>
           <p><%= next_routine[:rest_id] %></p>
         <% end %>
       </div>
     <% end %>
-    
+
     <div class="action-contents">
       <div class="back-btn-content">
         <%= form.submit "戻る", name: "back", class: "back-btn" %>

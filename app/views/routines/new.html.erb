@@ -1,20 +1,22 @@
 <%= render "shared/second-header" %>
 <div class="new-routine-wrap">
-  <h1>ルーティン新規作成</h1>
-  <%= form_with model: @routine, url: confirm_routines_path, method: :get, local: true do |form|  %>
-  
-  <%= render 'shared/error_messages', model: form.object %>
 
-    <div class="routine">
-      <%= render "form", f: form %>
-    </div>
-  
-    <div class="add-routine-btn">
-      <%= link_to_add_association "メニューの追加", form, :next_routines,
-        data: { association_insertion_method: 'before' } %>
-      <%= form.fields_for :next_routines do |next_routine| %>
-        <%= render "next_routine_fields", f: next_routine %>
-      <% end %>
+  <%= form_with model: @routine, url: confirm_routines_path, method: :get, local: true do |form|  %>
+    <%= render 'shared/error_messages', model: form.object %>
+    <h1>ルーティン新規作成</h1>
+
+    <div class="routine-form-wrap">
+      <div class="routine-form">
+        <%= render "form", f: form %>
+      </div>
+
+      <div class="next-routine-form">
+        <%= link_to_add_association "メニューの追加", form, :next_routines,
+        data: { association_insertion_method: 'append' }, id: "add-nested-btn" %>
+        <%= form.fields_for :next_routines do |next_routine| %>
+          <%= render "next_routine_fields", f: next_routine %>
+        <% end %>
+      </div>
     </div>
   
     <div class="confirm-btn-content">
@@ -22,3 +24,5 @@
     </div>
   <% end %>
 </div>
+
+<%= render "shared/footer" %>

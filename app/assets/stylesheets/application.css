@@ -24,3 +24,7 @@ a {
 .hidden{
   display: none;
 }
+
+body {
+  padding: 70px 0 100px;
+}
