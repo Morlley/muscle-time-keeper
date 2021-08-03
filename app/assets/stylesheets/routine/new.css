@@ -1,4 +1,54 @@
-.new-routine-wrap {
-  
+/* confirmでも使用しているものあり */
+.new-routine-wrap, .confirm-routine-wrap {
+  background-color: #EEEEEE;
+  text-align: center;
+  width: 100%;
+  padding: 0 30px;
+  height: calc(100vh - 170px);
+  color: #555555;
+}
+
+.routine-form-wrap, .confirm-form-wrap{
+  background-color: white;
+  padding: 30px 0;
+  height: 100%;
+  overflow: auto;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form-routine-header {
+  font-size: 24px;
+}
+
+.routine-form, .nested-fields, .confirm-routine{
+  padding: 20px 0;
+  margin: 10px auto;
+  width: 80%;
+  border: 1px solid #EEE;
+}
+
+.field {
+  margin: 0 20px 10px 0;
+  display: inline-block;
+}
+
+.remove-nested-btn {
+  display: block;
+}
+
+.routine-form-text {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.select-box {
+  width: 100px;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
