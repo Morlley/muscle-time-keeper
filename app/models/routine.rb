@@ -10,6 +10,7 @@ class Routine < ApplicationRecord
   belongs_to :rest
 
   with_options presence: true do
+    validates :name
     validates :menu
   end
 

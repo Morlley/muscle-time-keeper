@@ -19,6 +19,7 @@
 
 | Column        | Type       | Options           |
 | ------------- | ---------- | ----------------- |
+| name          | string     | null: false       |
 | menu          | string     | null: false       |
 | set_count_id  | integer    | null: false       |
 | rest_id       | integer    | null: false       |

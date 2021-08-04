@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_07_28_103008) do
   end
 
   create_table "routines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
     t.string "menu", null: false
     t.integer "set_count_id", null: false
     t.integer "rest_id", null: false
