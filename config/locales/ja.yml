@@ -15,6 +15,12 @@ ja:
         set_count_id: セット数
         rest_id: インターバル
 
+      # capybara用
+      next_routine:
+        menu: 追加メニューのトレーニング名
+        set_count_id: 追加メニューのセット数
+        rest_id: 追加メニューのインターバル
+
       next_routines:
         menu: 追加メニューのトレーニング名
         set_count_id: 追加メニューのセット数
