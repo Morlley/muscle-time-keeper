@@ -13,7 +13,7 @@
     </ul>
 
     <ul class="show-user-list user hidden" id="user-list">
-      <%= link_to user_path(current_user.id), class: "header-link" do %>
+      <%= link_to user_path(current_user.id), class: "header-link move-to-mypage" do %>
         <li>マイページ<span class="arrow">></span></li>
       <% end %>
       <%= link_to destroy_user_session_path, method: :delete, class: "header-link" do %>
