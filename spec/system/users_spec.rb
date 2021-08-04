@@ -100,6 +100,7 @@ RSpec.describe 'ログイン', type: :system do
       expect(page).to have_content("ログアウト")
     end
   end
+
   context 'ログインができないとき' do
     it '保存されているユーザーの情報と合致しないとログインができない' do
       # ベーシック認証
@@ -113,6 +114,54 @@ RSpec.describe 'ログイン', type: :system do
       find('input[name="commit"]').click
       # ログインページへ戻されることを確認する
       expect(current_path).to eq(new_user_session_path)
+    end
+  end
+end
+
+RSpec.describe 'マイページ', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+    @another_user = FactoryBot.create(:user)
+  end
+
+  context "マイページへ移動できるとき" do
+    it "ログインしたユーザーはマイページへ移動できる" do
+      # ベーシック認証
+      basic_pass new_user_session_path
+      # ログインページに移動する
+      visit new_user_session_path
+      # 正しいユーザー情報を入力する
+      fill_in "email", with: @user.email
+      fill_in "password", with: @user.password
+      # ログインボタンを押す
+      find('input[name="commit"]').click
+      # トップページへ遷移することを確認する
+      expect(current_path).to eq(root_path)
+      # カーソルを合わせるとマイページボタンが表示されることを確認する
+      find('.user-hover').hover
+      expect(page).to have_content("マイページ")
+      # マイページボタンを押すとマイページへ移動できる
+      find(".move-to-mypage").click
+      expect(current_path).to eq(user_path(@user.id))
+    end
+  end
+
+  context "マイページへ移動できないとき" do
+    it "自分以外のユーザーのマイページへは移動できない" do
+      # ベーシック認証
+      basic_pass new_user_session_path
+      # ログインページに移動する
+      visit new_user_session_path
+      # 正しいユーザー情報を入力する
+      fill_in "email", with: @user.email
+      fill_in "password", with: @user.password
+      # ログインボタンを押す
+      find('input[name="commit"]').click
+      # トップページへ遷移することを確認する
+      expect(current_path).to eq(root_path)
+      # 自分以外のユーザーのマイページへアクセスしようとするとトップページに戻される
+      visit user_path(@another_user.id)
+      expect(current_path).to eq(root_path)
     end
   end
 end
