@@ -1,0 +1,25 @@
+<div class="nested-fields">
+  <%# テストコードで追加メニューのinputを選択できるようにクラス名を親メニューと分ける %>
+  <div class="field">
+    <div class="routine-form-text">
+      <%= f.label :menu, "トレーニング名" %>
+    </div>
+    <%= f.text_field :menu, class: "next-routine-input" %>
+  </div>
+
+  <div class="field">
+    <div class="routine-form-text">
+      <%= f.label :set_count_id, "セット数" %>
+    </div>
+    <%= f.collection_select(:set_count_id, SetCount.all, :id, :name, {}, {class:"select-box next-set-select"}) %>
+  </div>
+
+  <div class="field">
+    <div class="routine-form-text">
+      <%= f.label :rest_id, "インターバル" %>
+    </div>
+    <%= f.collection_select(:rest_id, Rest.all, :id, :name, {}, {class:"select-box next-rest-select"}) %>
+  </div>
+
+  <%= link_to_remove_association "削除", f, class: "remove-nested-btn" %>
+</div>

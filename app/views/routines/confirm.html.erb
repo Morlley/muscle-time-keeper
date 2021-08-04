@@ -1,0 +1,78 @@
+<%= render "shared/second-header" %>
+
+<div class="confirm-routine-wrap">
+  <%= form_with model: @routine, class:"confirm-form-wrap" ,local: true do |form|  %>
+    <%# hiddenのinputでcreateアクションにデータを送る %>
+    <div class="hidden">
+      <%= render "form", f: form %>
+      <%= form.fields_for :next_routines do |next_routine| %>
+        <%= render "form", f: next_routine %>
+      <% end %>
+    </div>
+    <%# ここまで  %>
+    <h1 class="form-routine-header">ルーティンの確認</h1>
+
+    <div class="confirm-routine">
+      <div class="menu-header">
+        <h2">1つ目のメニュー</h2>
+      </div>
+      <div class="field">
+        <div class="routine-form-text">
+          トレーニング名
+        </div>
+        <p><%= @routine.menu %></p>
+      </div>
+      <div class="field">
+        <div class="routine-form-text">
+          セット数
+        </div>  
+        <p><%= @routine.set_count.name %>セット</p>
+      </div>
+      <div class="field">
+        <div class="routine-form-text">
+          インターバル
+        </div>
+        <p><%= @routine.rest.name %></p>
+      </div>
+    </div>
+
+    <% if @next_routines.present? %>
+      <% @next_routines.each_with_index do |next_routine, i| %>
+        <div class="confirm-routine">
+          <div class="menu-header">
+            <h2><%= i + 2 %>つ目のメニュー</h2>
+          </div>
+          <div class="field">
+            <div class="routine-form-text">
+              トレーニング名
+            </div>  
+            <p><%= next_routine[:menu] %></p>
+          </div>
+          <div class="field">
+            <div class="routine-form-text">
+              セット数
+            </div>
+            <p><%= next_routine[:set_count_id] %>セット</p>
+          </div>
+          <div class="field">
+            <div class="routine-form-text">
+              インターバル
+            </div>
+            <p><%= next_routine[:rest_id] %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="action">
+      <div class="back-btn-content">
+        <%= form.submit "戻る", name: "back", class: "back-btn" %>
+      </div>
+      <div class="create-btn-content">
+        <%= form.submit "作成", class: "create-btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>

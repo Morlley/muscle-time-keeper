@@ -3,6 +3,9 @@
   <%= link_to "#", class: "search header-link" do %>
     <div>みんなのルーティンを探す</div>
   <% end %>
+  <%= link_to new_routine_path, class: "create-routine header-link" do %>
+    <div>ルーティンを作成</div>
+  <% end %>
   <div class="nav">
     <ul class="header-right">
         <li><%= link_to "ワークアウトを開始", "#", class: "start-workout header-link" %></li>
