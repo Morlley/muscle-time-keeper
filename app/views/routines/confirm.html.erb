@@ -4,6 +4,12 @@
   <%= form_with model: @routine, class:"confirm-form-wrap" ,local: true do |form|  %>
     <%# hiddenのinputでcreateアクションにデータを送る %>
     <div class="hidden">
+      <div class="routine-name-wrap">
+        <div class="routine-form-text">
+          <%= form.label :name, "ルーティン名" %>
+        </div>
+      <%= form.text_field :name, class: "routine-name-input" %>
+      </div>
       <%= render "form", f: form %>
       <%= form.fields_for :next_routines do |next_routine| %>
         <%= render "form", f: next_routine %>
@@ -11,6 +17,13 @@
     </div>
     <%# ここまで  %>
     <h1 class="form-routine-header">ルーティンの確認</h1>
+
+    <div class="routine-name-wrap">
+      <div class="routine-form-text">
+        ルーティン名
+      </div>
+      <p class="routine-name"><%= @routine.name %></p>
+    </div>
 
     <div class="confirm-routine">
       <div class="menu-header">
@@ -20,7 +33,7 @@
         <div class="routine-form-text">
           トレーニング名
         </div>
-        <p><%= @routine.menu %></p>
+        <p class="routine"><%= @routine.menu %></p>
       </div>
       <div class="field">
         <div class="routine-form-text">

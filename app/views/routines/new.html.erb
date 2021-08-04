@@ -7,6 +7,14 @@
     <%= render 'shared/error_messages', model: form.object %>
 
     <h1 class="form-routine-header">ルーティン作成</h1>
+
+    <div class="routine-name-wrap">
+      <div class="routine-form-text">
+        <%= form.label :name, "ルーティン名" %>
+      </div>
+      <%= form.text_field :name, class: "routine-name-input" %>
+    </div>
+
     <div class="routine-form">
       <%= render "form", f: form %>
     </div>

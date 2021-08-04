@@ -25,7 +25,7 @@ class RoutinesController < ApplicationController
   private
 
   def routine_params
-    params.require(:routine).permit(:menu, :set_count_id, :rest_id, next_routines_attributes: [:menu, :set_count_id, :rest_id, :routine_id, :_destroy]).merge(user_id: current_user.id)
+    params.require(:routine).permit(:name, :menu, :set_count_id, :rest_id, next_routines_attributes: [:menu, :set_count_id, :rest_id, :routine_id, :_destroy]).merge(user_id: current_user.id)
   end
 
   def modify_active_hash

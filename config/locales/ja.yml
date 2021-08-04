@@ -11,6 +11,7 @@ ja:
         birthday: 生年月日
 
       routine:
+        name: ルーティン名
         menu: トレーニング名
         set_count_id: セット数
         rest_id: インターバル

@@ -5,6 +5,10 @@
   margin: 0 auto 20px;
 }
 
+.routine-name {
+  font-size: 24px;
+}
+
 .field p {
   font-size: 25px;
 }
