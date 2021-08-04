@@ -6,12 +6,18 @@ RSpec.describe Routine, type: :model do
   end
 
   context "確認ページへ遷移することができる" do
-    it 'トレーニング名、セット数、インターバル、ユーザー情報が存在すれば遷移できること' do
+    it 'ルーティン名、トレーニング名、セット数、インターバル、ユーザー情報が存在すれば遷移できること' do
       expect(@routine).to be_valid
     end
   end
 
   context "確認ページへ遷移することができない" do
+    it "ルーティン名が空では遷移できない" do
+      @routine.name = ""
+      @routine.valid?
+      expect(@routine.errors.full_messages).to include("ルーティン名を入力してください")
+    end
+
     it "トレーニング名が空では遷移できない" do
       @routine.menu = ""
       @routine.valid?
