@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :move_to_index
 
   def show
+    @routines = @user.routines.order("created_at DESC").includes(:next_routines)
   end
 
   def me
