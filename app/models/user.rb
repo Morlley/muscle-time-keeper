@@ -9,7 +9,7 @@ class User < ApplicationRecord
     validates :birthday
   end
 
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d_-]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'は半角英数記号で入力してください'
 
   has_many :routines
