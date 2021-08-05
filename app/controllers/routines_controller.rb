@@ -1,4 +1,6 @@
 class RoutinesController < ApplicationController
+  before_action :set_routine, only: [:edit, :update]
+
   def new
     @routine = Routine.new
   end
@@ -23,17 +25,28 @@ class RoutinesController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
-
+    if @routine.update(edit_routine_params)
+      redirect_to user_path(current_user.id)
+    else
+      render :edit
+    end
   end
 
   private
 
+  def set_routine
+    @routine = Routine.find(params[:id])
+  end
+
   def routine_params
     params.require(:routine).permit(:name, :menu, :set_count_id, :rest_id, next_routines_attributes: [:menu, :set_count_id, :rest_id, :routine_id, :_destroy]).merge(user_id: current_user.id)
+  end
+
+  def edit_routine_params
+    params.require(:routine).permit(:name, :menu, :set_count_id, :rest_id, next_routines_attributes: [:menu, :set_count_id, :rest_id, :routine_id, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def modify_active_hash

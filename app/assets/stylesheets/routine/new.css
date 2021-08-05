@@ -1,5 +1,5 @@
-/* confirmでも使用しているものあり */
-.new-routine-wrap, .confirm-routine-wrap {
+/* confirm、editでも使用しているものあり */
+.new-routine-wrap, .confirm-routine-wrap, .edit-routine-wrap {
   background-color: #EEEEEE;
   text-align: center;
   width: 100%;
