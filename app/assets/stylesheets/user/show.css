@@ -52,6 +52,12 @@
   color: #0099e8;
 }
 
+.edit-routine {
+  margin-left: 28px;
+  font-size: 19px;
+  color: #0099e8;
+}
+
 .detail:active{
   color: #FF6633;
 }
