@@ -4,7 +4,10 @@
 
     <% @routines.each do |routine| %>
       <div class="routine-list">
-        <p class="routine-name"><%= routine.name %><span class="detail">詳細▼</span></p>
+        <p class="routine-name">
+          <%= routine.name %><span class="detail">詳細▼</span>
+          <%= link_to "編集", edit_routine_path(routine.id), class: "edit-routine" %>
+        </p>
         <div class="hidden routine-menu-lists">
           <div class="each-menu">
             <h2 class="each-menu-header">1つ目のメニュー</h2>
