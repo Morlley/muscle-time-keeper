@@ -1,5 +1,5 @@
 class RoutinesController < ApplicationController
-  before_action :set_routine, only: [:edit, :update]
+  before_action :set_routine, only: [:edit, :update, :destroy]
 
   def new
     @routine = Routine.new
@@ -33,6 +33,11 @@ class RoutinesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @routine.destroy
+    redirect_to user_path(current_user.id)
   end
 
   private

@@ -55,6 +55,9 @@
                 </div>
               </div>
             <% end %>
+            <%= link_to "削除する", routine_path(routine.id), method: :delete, data: { confirm: "【確認】 ルーティンを削除してもよろしいですか？"}, class: "delete-routine" %>
+          <% else %>
+            <%= link_to "削除する", routine_path(routine.id), method: :delete, data: { confirm: "【確認】 ルーティンを削除してもよろしいですか？"}, class: "delete-routine" %>
           <% end %> 
         </div>
       </div>
