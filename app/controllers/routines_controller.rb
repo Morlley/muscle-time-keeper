@@ -2,6 +2,10 @@ class RoutinesController < ApplicationController
   before_action :set_routine, only: [:edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
+  def index
+    @routines = Routine.where(user_id: params[:user_id])
+  end
+
   def new
     @routine = Routine.new
   end

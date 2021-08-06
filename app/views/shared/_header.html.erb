@@ -8,7 +8,7 @@
   <% end %>
   <div class="nav">
     <ul class="header-right">
-        <li><%= link_to "ワークアウトを開始", "#", class: "start-workout header-link" %></li>
+        <li><%= link_to "ワークアウトを開始", user_routines_path(current_user.id), class: "start-workout header-link" %></li>
         <li class="user-hover user"><%= image_tag "user-logo.png", class: "user-logo header-link", width: "20" %></li>
     </ul>
 

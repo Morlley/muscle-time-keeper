@@ -6,11 +6,14 @@ Rails.application.routes.draw do
   }
   root to: "workouts#index"
   resources :users, only: :show do
+    resources :routines, only: :index
     member do
       get "me"
     end
   end
-  resources :routines, only: [:new, :create, :edit, :update, :destroy] do
+
+  resources :routines, except: [:show] do
+    resources :workout, only: :new
     collection do
       get "confirm"
     end

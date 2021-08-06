@@ -5,6 +5,10 @@ class WorkoutsController < ApplicationController
     get_calendar
   end
 
+  def new
+    
+  end
+
   private
 
   def set_date

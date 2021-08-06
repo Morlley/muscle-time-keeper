@@ -1,0 +1,35 @@
+<%= render "shared/second-header" %>
+
+<div class="workout-contents">
+  <% if @routines.present? %>
+    <h1 class="begin-workout-header">開始するルーティンを選択してください</h1>
+
+    <% @routines.each do |routine| %>
+      <div class="routine-list">
+        <p class="routine-name">
+          <%= link_to routine.name, new_routine_workout_path(routine.id), class: "begin-workout" %><span class="detail">詳細▼</span>
+        </p>
+        <div class="hidden routine-menu-lists">
+          <div class="show-menu">
+            <h2 class="show-menu-header">1つ目のメニュー</h2>
+            <%= render "routines/menu_field", routine: routine %>
+          </div>
+
+          <% if routine.next_routines.present? %>
+            <% routine.next_routines.each_with_index do |next_routine, i| %>
+              <div class="show-menu">
+                <h2 class="show-menu-header"><%= i + 2 %>つ目のメニュー</h2>
+                <%= render "routines/menu_field", routine: next_routine %>
+              </div>
+            <% end %>
+          <% end %> 
+        </div>
+      </div>
+    <% end %>
+
+  <% else %>
+    <h2 class="not-create-alert">作成したルーティンはありません</h2>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>
