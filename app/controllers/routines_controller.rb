@@ -1,6 +1,6 @@
 class RoutinesController < ApplicationController
   before_action :set_routine, only: [:edit, :update, :destroy]
-  before_action :move_to_index, only: [:destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def new
     @routine = Routine.new
