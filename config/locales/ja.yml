@@ -13,16 +13,19 @@ ja:
       routine:
         name: ルーティン名
         menu: トレーニング名
+        workout_time_id: ワークアウトタイム
         set_count_id: セット数
         rest_id: インターバル
 
       # capybara用
       next_routine:
         menu: 追加メニューのトレーニング名
+        workout_time_id: 追加メニューのワークアウトタイム
         set_count_id: 追加メニューのセット数
         rest_id: 追加メニューのインターバル
 
       next_routines:
         menu: 追加メニューのトレーニング名
+        workout_time_id: 追加メニューのワークアウトタイム
         set_count_id: 追加メニューのセット数
         rest_id: 追加メニューのインターバル

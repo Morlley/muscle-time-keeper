@@ -6,7 +6,7 @@ RSpec.describe Routine, type: :model do
   end
 
   context "確認ページへ遷移することができる" do
-    it 'ルーティン名、トレーニング名、セット数、インターバル、ユーザー情報が存在すれば遷移できること' do
+    it 'ルーティン名、ワークアウトタイム、トレーニング名、セット数、インターバル、ユーザー情報が存在すれば遷移できること' do
       expect(@routine).to be_valid
     end
   end
@@ -24,6 +24,12 @@ RSpec.describe Routine, type: :model do
       expect(@routine.errors.full_messages).to include("トレーニング名を入力してください")
     end
 
+    it "ワークアウトタイムが空では遷移できない" do
+      @routine.workout_time_id = 1
+      @routine.valid?
+      expect(@routine.errors.full_messages).to include("ワークアウトタイムを選択してください")
+    end
+    
     it "セット数が空では遷移できない" do
       @routine.set_count_id = 1
       @routine.valid?
