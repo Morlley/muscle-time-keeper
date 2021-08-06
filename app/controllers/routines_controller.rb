@@ -1,5 +1,6 @@
 class RoutinesController < ApplicationController
   before_action :set_routine, only: [:edit, :update, :destroy]
+  before_action :move_to_index, only: [:destroy]
 
   def new
     @routine = Routine.new
@@ -45,6 +46,13 @@ class RoutinesController < ApplicationController
   def set_routine
     @routine = Routine.find(params[:id])
   end
+
+  def move_to_index
+    if current_user.id != @routine.user.id
+      redirect_to root_path
+    end
+  end
+
 
   def routine_params
     params.require(:routine).permit(:name, :menu, :set_count_id, :rest_id, next_routines_attributes: [:menu, :set_count_id, :rest_id, :routine_id, :_destroy]).merge(user_id: current_user.id)
