@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get "me"
     end
   end
-  resources :routines, only: [:new, :create, :edit, :update] do
+  resources :routines, only: [:new, :create, :edit, :update, :destroy] do
     collection do
       get "confirm"
     end
