@@ -9,50 +9,16 @@
           <%= link_to "編集", edit_routine_path(routine.id), class: "edit-routine" %>
         </p>
         <div class="hidden routine-menu-lists">
-          <div class="each-menu">
-            <h2 class="each-menu-header">1つ目のメニュー</h2>
-            <div class="field">
-              <div class="routine-form-text">
-                トレーニング名
-              </div>
-              <p class="menu-content"><%= routine.menu %></p>
-            </div>
-            <div class="field">
-              <div class="routine-form-text">
-                セット数
-              </div>  
-              <p class="menu-content"><%= routine.set_count.name %>セット</p>
-            </div>
-            <div class="field">
-              <div class="routine-form-text">
-                インターバル
-              </div>
-              <p class="menu-content"><%= routine.rest.name %></p>
-            </div>
+          <div class="show-menu">
+            <h2 class="show-menu-header">1つ目のメニュー</h2>
+            <%= render "routines/menu_field", routine: routine %>
           </div>
 
           <% if routine.next_routines.present? %>
             <% routine.next_routines.each_with_index do |next_routine, i| %>
-              <div class="each-menu">
-                <h2 class="each-menu-header"><%= i + 2 %>つ目のメニュー</h2>
-                <div class="field">
-                  <div class="routine-form-text">
-                    トレーニング名
-                  </div>
-                  <p class="menu-content"><%= next_routine.menu %></p>
-                </div>
-                <div class="field">
-                  <div class="routine-form-text">
-                    セット数
-                  </div>  
-                  <p class="menu-content"><%= next_routine.set_count.name %>セット</p>
-                </div>
-                <div class="field">
-                  <div class="routine-form-text">
-                    インターバル
-                  </div>
-                  <p class="menu-content"><%= next_routine.rest.name %></p>
-                </div>
+              <div class="show-menu">
+                <h2 class="show-menu-header"><%= i + 2 %>つ目のメニュー</h2>
+                <%= render "routines/menu_field", routine: next_routine %>
               </div>
             <% end %>
             <%= link_to "削除する", routine_path(routine.id), method: :delete, data: { confirm: "【確認】 ルーティンを削除してもよろしいですか？"}, class: "delete-routine" %>

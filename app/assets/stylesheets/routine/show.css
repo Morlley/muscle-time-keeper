@@ -9,7 +9,7 @@
   display: inline-block;
 }
 
-.each-menu {
+.show-menu {
   border-bottom: 1px solid #CCC ;
   font-size: 16px;
   margin-bottom: 10px;
@@ -32,7 +32,7 @@
   color: #FF6633;
 }
 
-.each-menu-header {
+.show-menu-header {
   border-bottom: 1px dashed #DDD;
   font-weight: bold;
   margin-bottom: 5px;

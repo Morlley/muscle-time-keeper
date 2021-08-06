@@ -9,6 +9,13 @@
 
   <div class="field">
     <div class="routine-form-text">
+      <%= f.label :workout_time_id, "ワークアウトタイム" %>
+    </div>
+    <%= f.collection_select(:workout_time_id, WorkoutTime.all, :id, :name, {}, {class:"select-box next-workout-time-select"}) %>
+  </div>
+
+  <div class="field">
+    <div class="routine-form-text">
       <%= f.label :set_count_id, "セット数" %>
     </div>
     <%= f.collection_select(:set_count_id, SetCount.all, :id, :name, {}, {class:"select-box next-set-select"}) %>
