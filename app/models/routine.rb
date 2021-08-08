@@ -6,6 +6,7 @@ class Routine < ApplicationRecord
 
 
   extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :workout_time
   belongs_to :set_count
   belongs_to :rest
 
@@ -15,6 +16,7 @@ class Routine < ApplicationRecord
   end
 
   with_options presence: true, numericality: {only_integer: true, message: "整数を選択してください", other_than: 1, message: "を選択してください"} do
+    validates :workout_time_id
     validates :set_count_id
     validates :rest_id
   end

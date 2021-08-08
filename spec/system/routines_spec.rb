@@ -31,14 +31,16 @@ RSpec.describe "Routines", type: :system do
       # フォームに情報を入力する
       fill_in "routine_name", with: @routine.name
       fill_in "routine_menu", with: @routine.menu
+      select "15秒", from: "routine_workout_time_id"
       select "3", from: "routine_set_count_id"
-      select "4", from: "routine_rest_id"
+      select "45秒", from: "routine_rest_id"
       # 「確認画面へ」のボタンを押すと確認ページへ移動する
       find(".confirm-btn").click
       expect(current_path).to eq confirm_routines_path
       # 入力した情報が表示される
       expect(page).to have_content(@routine.name)
       expect(page).to have_content(@routine.menu)
+      expect(page).to have_content("15秒")
       expect(page).to have_content("3セット")
       expect(page).to have_content("45秒")
       # 戻るボタンを押すと作成ページへ移動する
@@ -47,6 +49,7 @@ RSpec.describe "Routines", type: :system do
       # 入力した情報が保持されている
       expect(find(".routine-name-input").value).to have_content(@routine.name)
       expect(find(".input-training").value).to have_content(@routine.menu)
+      expect(find("#routine_workout_time_id").value).to have_content("3")
       expect(find("#routine_set_count_id").value).to have_content("4")
       expect(find("#routine_rest_id").value).to have_content("4")
       # 「確認画面へ」のボタンを押す
@@ -94,6 +97,7 @@ RSpec.describe "Routines", type: :system do
       # フォームに空の情報を入力する
       fill_in "routine_name", with: ""
       fill_in "routine_menu", with: ""
+      select "--", from: "routine_workout_time_id"
       select "--", from: "routine_set_count_id"
       select "--", from: "routine_rest_id"
       # 「確認画面へ」のボタンを押すと作成ページへ戻される

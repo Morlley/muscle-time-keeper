@@ -5,7 +5,18 @@ class WorkoutsController < ApplicationController
     get_calendar
   end
 
+  def new
+    @routine = Routine.find(params[:routine_id])
+    move_to_index
+  end
+
   private
+
+  def move_to_index
+    if current_user.id != @routine.user_id
+      redirect_to root_path
+    end
+  end
 
   def set_date
     if params[:monthNum].present?

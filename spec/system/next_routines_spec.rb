@@ -32,11 +32,13 @@ RSpec.describe "Routines", type: :system do
       # フォームに情報を入力する
       fill_in "routine_name", with: @routine.name
       fill_in "routine_menu", with: @routine.menu
+      select "15秒", from: "routine_workout_time_id"
       select "3", from: "routine_set_count_id"
-      select "4", from: "routine_rest_id"
+      select "45秒", from: "routine_rest_id"
       # 「メニューを追加」を押して追加メニューの情報を入力する
       find(".add-nested-btn").click
       find('.next-routine-input').set(@next_routine.menu)
+      find(".next-workout-time-select").select("30秒")
       find(".next-set-select").select("4")
       find(".next-rest-select").select("1分")
       # 「確認画面へ」のボタンを押すと確認ページへ移動する
@@ -45,9 +47,11 @@ RSpec.describe "Routines", type: :system do
       # 入力した情報が表示される
       expect(page).to have_content(@routine.name)
       expect(page).to have_content(@routine.menu)
+      expect(page).to have_content("15秒")
       expect(page).to have_content("3セット")
       expect(page).to have_content("45秒")
       expect(page).to have_content(@next_routine.menu)
+      expect(page).to have_content("30秒")
       expect(page).to have_content("4セット")
       expect(page).to have_content("1分")
       # 戻るボタンを押すと作成ページへ移動する
@@ -56,9 +60,11 @@ RSpec.describe "Routines", type: :system do
       # 入力した情報が保持されている
       expect(find(".routine-name-input").value).to have_content(@routine.name)
       expect(find(".input-training").value).to have_content(@routine.menu)
+      expect(find("#routine_workout_time_id").value).to have_content("3")
       expect(find("#routine_set_count_id").value).to have_content("4")
       expect(find("#routine_rest_id").value).to have_content("4")
       expect(find(".next-routine-input").value).to have_content(@next_routine.menu)
+      expect(find(".next-workout-time-select").value).to have_content("5")
       expect(find(".next-set-select").value).to have_content("5")
       expect(find(".next-rest-select").value).to have_content("5")
       # 「確認画面へ」のボタンを押す
@@ -95,11 +101,13 @@ RSpec.describe "Routines", type: :system do
       # フォームに空の情報を入力する
       fill_in "routine_name", with: ""
       fill_in "routine_menu", with: ""
+      select "--", from: "routine_workout_time_id"
       select "--", from: "routine_set_count_id"
       select "--", from: "routine_rest_id"
       # 「メニューを追加」を押して追加メニューの空の情報を入力する
       find(".add-nested-btn").click
       find('.next-routine-input').set("")
+      find(".next-workout-time-select").select("--")
       find(".next-set-select").select("--")
       find(".next-rest-select").select("--")
       # 「確認画面へ」のボタンを押すと作成ページへ戻される

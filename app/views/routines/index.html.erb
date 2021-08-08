@@ -1,12 +1,13 @@
-<div class="routine-lists-wrap">
+<%= render "shared/second-header" %>
+
+<div class="workout-contents">
   <% if @routines.present? %>
-    <h1 class="user-info-header">作成したルーティン</h1>
+    <h1 class="begin-workout-header">開始するルーティンを選択してください</h1>
 
     <% @routines.each do |routine| %>
       <div class="routine-list">
         <p class="routine-name">
-          <%= routine.name %><span class="detail">詳細▼</span>
-          <%= link_to "編集", edit_routine_path(routine.id), class: "edit-routine" %>
+          <%= link_to routine.name, new_routine_workout_path(routine.id), class: "begin-workout" %><span class="detail">詳細▼</span>
         </p>
         <div class="hidden routine-menu-lists">
           <div class="show-menu">
@@ -21,9 +22,6 @@
                 <%= render "routines/menu_field", routine: next_routine %>
               </div>
             <% end %>
-            <%= link_to "削除する", routine_path(routine.id), method: :delete, data: { confirm: "【確認】 ルーティンを削除してもよろしいですか？"}, class: "delete-routine" %>
-          <% else %>
-            <%= link_to "削除する", routine_path(routine.id), method: :delete, data: { confirm: "【確認】 ルーティンを削除してもよろしいですか？"}, class: "delete-routine" %>
           <% end %> 
         </div>
       </div>
@@ -33,3 +31,5 @@
     <h2 class="not-create-alert">作成したルーティンはありません</h2>
   <% end %>
 </div>
+
+<%= render "shared/footer" %>

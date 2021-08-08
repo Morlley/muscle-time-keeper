@@ -1,0 +1,64 @@
+.workout-wrap {
+  text-align: center;
+  height: calc(100vh - 170px);
+  color: #555;
+}
+
+.workout-name {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.workout-btn {
+  margin-bottom: 30px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.workout-content {
+  margin: 30px;
+  border-bottom: 1px dashed #AAA;
+  padding-bottom: 20px;
+}
+
+.workout-menu {
+  font-size: 35px;
+}
+
+.workout-menu span {
+  color: #0000EE;
+}
+
+.time-wrap {
+  border: 2px solid #AAA;
+  border-radius: 15px;
+  width: 30%;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.current-state {
+  font-size: 30px;
+}
+
+.last-seconds-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  font-size: 40px;
+  line-height: 68px;
+}
+
+.last-seconds, .last-set {
+  margin: 0 5px;
+  font-size: 50px;
+  color: #FF3333;
+}
+
+.last-set-wrap {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  line-height: 75px;
+}
