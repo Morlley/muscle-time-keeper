@@ -44,18 +44,6 @@ function countDownTimer (){
         if (lastTime == 0){
           // ワークアウトのタイムのカウントダウンを停止
           clearInterval(clearCountDown);
-
-          // セット数を-1する
-          setCountDown();
-          
-          // 最後のメニューにて、全てのワークアウトのカウントダウンを完了すれば実行(一番最後のRestをカウントダウンさせないため)
-          if(lastSetCount == 0 && actionNum == routineLength){
-            workoutContent.classList.add("hidden");
-            // 終了ボタンを表示させる
-            finishBtn.classList.remove("hidden");
-            return;
-          };
-          
           // (始)WorkoutとRestの文字を入れ替え
           timeElement.classList.add("hidden");
           currentStateElement.innerText = "Rest";
@@ -72,24 +60,35 @@ function countDownTimer (){
               // 休憩時間のカウントダウンを停止
               clearInterval(clearRestDown);
 
-              // セット数が0になれば実行
-              if (lastSetCount == 0 ){
-                // カウントダウンをしていたメニューを隠し次のメニューを一番上に表示させる
-                workoutContent.classList.add("hidden")
-                // メニューの番号を+1する
-                actionNum++;
-                // 次のメニューのカウントダウンを開始
-                startTimer();
-                // これより下の処理をさせないためにreturnする
-                return;
-              }
-
               // (始)RestとWorkoutの文字を入れ替え
               timeElement.classList.remove("hidden");
               currentStateElement.innerText = "Workout";
               currentStateElement.removeAttribute("style", "color:#005FFF;")
               restElement.classList.add("hidden");
               // (終)RestとWorkoutの文字を入れ替え
+
+              // セット数を-1する
+              setCountDown();
+              
+              // セット数が0になれば実行
+              if (lastSetCount == 0 ){
+                // カウントダウンをしていたメニューを隠し次のメニューを一番上に表示させる
+                workoutContent.classList.add("hidden")
+                // メニューの番号を+1する
+                actionNum++;
+                
+                // すべてのメニューのカウントダウンを完了すれば実行
+                if (actionNum > routineLength){
+                  // 終了ボタンを表示させる
+                  finishBtn.classList.remove("hidden");
+                  return;
+                };
+
+                // 次のメニューのカウントダウンを開始
+                startTimer();
+                // これより下の処理をさせないためにreturnする
+                return;
+              }
 
               // (始)ワークアウトと休憩の時間が0のままなので初期値に戻す
               lastTime = workoutTime;
@@ -108,10 +107,30 @@ function countDownTimer (){
       }, 1000);
     };
 
-    // クリックされたらカウントダウンを開始
     startTimer();
   
   });
 };
 
 window.addEventListener("load", countDownTimer);
+
+
+// セット数が0になれば実行
+if (lastSetCount == 0 ){
+  // カウントダウンをしていたメニューを隠し次のメニューを一番上に表示させる
+  workoutContent.classList.add("hidden")
+  // メニューの番号を+1する
+  actionNum++;
+  
+  // すべてのメニューのカウントダウンを完了すれば実行
+  if (actionNum > routineLength){
+    // 終了ボタンを表示させる
+    finishBtn.classList.remove("hidden");
+    return;
+  };
+
+  // 次のメニューのカウントダウンを開始
+  startTimer();
+  // これより下の処理をさせないためにreturnする
+  return;
+}
