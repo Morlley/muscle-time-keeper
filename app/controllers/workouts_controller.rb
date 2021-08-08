@@ -8,9 +8,22 @@ class WorkoutsController < ApplicationController
   def new
     @routine = Routine.find(params[:routine_id])
     move_to_index
+    @workout = Workout.new
+  end
+
+  def create
+    workout = Workout.new(workout_params)
+    if workout.save
+    else
+      render :new
+    end
   end
 
   private
+
+  def workout_params
+    params.require(:workout).permit(:workout_date, :routine_id).merge(user_id: current_user.id)
+  end
 
   def move_to_index
     if current_user.id != @routine.user_id

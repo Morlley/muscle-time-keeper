@@ -44,7 +44,9 @@
 
   <div class="hidden" id="routine-length"><%= @routine.next_routines.length + 1 %></div>
 
-  <%= link_to "#", class: "hidden", id: "finish-workout-btn" do %>
-    <button class="workout-btn">終了する</button>
+  <%= form_with model: @workout, local: true do |f|%>
+    <%= f.hidden_field :workout_date, value: Date.today %>
+    <%= f.hidden_field :routine_id, value: @routine.id %>
+    <%= f.submit "終了する", class: "hidden workout-btn", id:"finish-workout-btn" %>
   <% end  %>
 </div>
