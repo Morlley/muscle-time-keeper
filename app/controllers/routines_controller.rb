@@ -3,7 +3,7 @@ class RoutinesController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @routines = Routine.where(user_id: params[:user_id])
+    @routines = Routine.where(user_id: params[:user_id]).order("created_at DESC")
   end
 
   def new

@@ -6,7 +6,7 @@ class WorkoutsController < ApplicationController
   end
 
   def new
-    
+    @routine = Routine.find(params[:routine_id])
   end
 
   private

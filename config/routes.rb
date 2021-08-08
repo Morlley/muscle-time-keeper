@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :routines, except: [:show] do
-    resources :workout, only: :new
+  resources :routines, except: [:show, :index] do
+    resources :workouts, only: :new
     collection do
       get "confirm"
     end
