@@ -23,7 +23,7 @@ class WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:workout_date, :routine_id).merge(user_id: current_user.id)
+    params.require(:workout).permit(:workout_date, :routine_id, :routine_name).merge(user_id: current_user.id)
   end
 
   def move_to_index
