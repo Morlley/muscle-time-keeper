@@ -17,6 +17,11 @@
 <%= day.day %>日
 </span>
 
-<ul>
-  <li class="workout-log">実施したワークアウト</li>
-</ul>
+<% day_workouts = @workouts.select{|i| i.workout_date == day } %>
+<% if day_workouts.present? %>
+  <% day_workouts.each do |day_workout| %>
+    <ul>
+      <li class="workout-log"><%= day_workout.routine.name %></li>
+    </ul>
+  <% end %>
+<% end %>
