@@ -4,6 +4,8 @@ function countDownTimer (){
   const routineLength = Number(document.getElementById("routine-length").innerText);
   let actionNum = 1;
 
+  const audio = document.getElementById("audio-js");
+
   startBtn.addEventListener("click", () => {
     startBtn.setAttribute("class", "hidden");
 
@@ -40,6 +42,11 @@ function countDownTimer (){
         // ワークアウトのタイムをカウントダウン
         countDown();
         
+        // 残りのワークアウトの時間が3秒になったら音を鳴らす
+        if (lastTime == 3){
+          audio.play();
+        };
+
         // ワークアウトのタイムが0になれば実行
         if (lastTime == 0){
           // ワークアウトのタイムのカウントダウンを停止
@@ -66,6 +73,11 @@ function countDownTimer (){
           // 休憩時間(Rest)をカウントダウン
           const clearRestDown = setInterval(() => {
             restDown();
+
+            // 残りの休憩時間が3秒になったら音を鳴らす
+            if (lastRest == 3){
+              audio.play();
+            };
 
             // 休憩時間が0になれば実行
             if (lastRest == 0){
