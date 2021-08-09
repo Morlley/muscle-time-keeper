@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_06_081729) do
+ActiveRecord::Schema.define(version: 2021_08_09_083213) do
 
   create_table "next_routines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "menu", null: false
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_08_06_081729) do
     t.bigint "routine_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "routine_name"
     t.index ["routine_id"], name: "index_workouts_on_routine_id"
     t.index ["user_id"], name: "index_workouts_on_user_id"
   end

@@ -47,6 +47,7 @@
   <%= form_with model: @workout, local: true do |f|%>
     <%= f.hidden_field :workout_date, value: Date.today %>
     <%= f.hidden_field :routine_id, value: @routine.id %>
+    <%= f.hidden_field :routine_name, value: @routine.name %>
     <%= f.submit "終了する", class: "hidden workout-btn", id:"finish-workout-btn" %>
   <% end  %>
 </div>

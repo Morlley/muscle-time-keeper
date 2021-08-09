@@ -4,5 +4,6 @@ class Workout < ApplicationRecord
 
   with_options presence: true do
     validates :workout_date
+    validates :routine_name
   end
 end
