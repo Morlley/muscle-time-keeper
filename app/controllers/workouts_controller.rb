@@ -3,7 +3,7 @@ class WorkoutsController < ApplicationController
   def index
     set_date
     get_calendar
-    @workouts = Workout.where(workout_date: @calendar, user_id: current_user.id).includes(:routine).order("workout_date ASC")
+    @workouts = Workout.where(workout_date: @calendar, user_id: current_user.id).order("workout_date ASC")
   end
 
   def new
