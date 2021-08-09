@@ -3,6 +3,7 @@
   <div class="workout-name"><%= @routine.name %></div>
 
   <button class="workout-btn" id="begin-workout-btn">スタート</button>
+  <%= audio_tag 'countdown.mp3', id:"audio-js" %>
 
   <div class="workout-content" id="workout-content1">
     <div class="workout-menu">No.1: <span><%= @routine.menu %></span></div>
