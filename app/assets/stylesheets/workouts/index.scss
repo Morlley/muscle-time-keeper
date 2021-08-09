@@ -47,7 +47,6 @@
 
 .calendar {
   margin: 10px;
-  text-align: center;
 }
 
 .wdays {
@@ -90,10 +89,6 @@
     font-size: 18px;
     font-weight: bold;
   }
-
-  li {
-    text-align: center;
-  }
 }
 
 .pre-day, .post-day {
@@ -115,4 +110,32 @@
   color: #FF5192;
   padding: 3px;
   border-radius: 5px;
+}
+
+.workout-log {
+  text-align: center;
+  padding: 0 10px;
+  font-size: 18px;
+}
+
+.announce-workout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  color:white;
+  padding: 10px;
+  border: 2px solid #CCC;
+  border-radius: 20px;
+  background-color: #555;
+}
+
+.workout-tip1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.workout-tip2 {
+  font-size: 25px;
 }
