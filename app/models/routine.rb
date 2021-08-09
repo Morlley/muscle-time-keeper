@@ -1,6 +1,6 @@
 class Routine < ApplicationRecord
   belongs_to :user
-  has_many :workouts
+  has_many :workouts, dependent: :nullify
   has_many :next_routines, dependent: :destroy
   accepts_nested_attributes_for :next_routines, allow_destroy: true
 
