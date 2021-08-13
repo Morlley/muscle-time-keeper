@@ -1,9 +1,10 @@
 class RoutinesController < ApplicationController
   before_action :set_routine, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_index_edit, only: [:edit, :update, :destroy]
+  before_action :move_to_root_edit, only: [:edit, :update, :destroy]
+  before_action :move_to_root_download, only: [:show, :download]
 
   def index
-    move_to_index
+    move_to_root
     @routines = Routine.where(user_id: params[:user_id]).order("created_at DESC")
   end
 
@@ -58,14 +59,20 @@ class RoutinesController < ApplicationController
     @routine = Routine.find(params[:id])
   end
 
-  def move_to_index
+  def move_to_root
     if current_user.id != params[:user_id].to_i
       redirect_to root_path
     end
   end
 
-  def move_to_index_edit
+  def move_to_root_edit
     if current_user.id != @routine.user.id
+      redirect_to root_path
+    end
+  end
+
+  def move_to_root_download
+    if current_user.id == @routine.user.id
       redirect_to root_path
     end
   end
