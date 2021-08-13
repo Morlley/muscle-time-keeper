@@ -9,10 +9,12 @@ class Routine < ApplicationRecord
   belongs_to :workout_time
   belongs_to :set_count
   belongs_to :rest
+  belongs_to :status
 
   with_options presence: true do
     validates :name
     validates :menu
+    validates :status_id
   end
 
   with_options presence: true, numericality: {only_integer: true, message: "整数を選択してください", other_than: 1, message: "を選択してください"} do
