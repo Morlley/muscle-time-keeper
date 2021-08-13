@@ -10,6 +10,8 @@
         </div>
       <%= form.text_field :name, class: "routine-name-input" %>
       </div>
+      <%= form.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box"}) %>
+
       <%= render "form", f: form %>
       <%= form.fields_for :next_routines do |next_routine| %>
         <%= render "form", f: next_routine %>
@@ -23,6 +25,7 @@
         ルーティン名
       </div>
       <p class="routine-name"><%= @routine.name %></p>
+      <span class="confirm-content public-status"><%= @routine.status.name %></span>
     </div>
 
     <div class="confirm-routine">

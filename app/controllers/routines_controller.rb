@@ -64,7 +64,7 @@ class RoutinesController < ApplicationController
 
 
   def routine_params
-    params.require(:routine).permit(:name, :workout_time_id, :menu, :set_count_id, :rest_id, next_routines_attributes: [:menu, :workout_time_id, :set_count_id, :rest_id, :routine_id, :_destroy]).merge(user_id: current_user.id)
+    params.require(:routine).permit(:name, :workout_time_id, :menu, :set_count_id, :rest_id, :status_id, next_routines_attributes: [:menu, :workout_time_id, :set_count_id, :rest_id, :routine_id, :_destroy]).merge(user_id: current_user.id, having_user_id: current_user.id)
   end
 
   def edit_routine_params

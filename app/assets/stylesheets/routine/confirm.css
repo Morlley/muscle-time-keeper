@@ -5,6 +5,10 @@
   margin: 0 auto 20px;
 }
 
+.routine-name-wrap {
+  position: relative;
+}
+
 .routine-name {
   font-size: 24px;
 }
@@ -15,4 +19,10 @@
 
 .back-btn {
   margin-right: 70px;
+}
+
+.public-status {
+  position: absolute;
+  top: 30px;
+  right: 25%;
 }
