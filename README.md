@@ -17,14 +17,16 @@
 
 ## routinesテーブル
 
-| Column        | Type       | Options           |
-| ------------- | ---------- | ----------------- |
-| name          | string     | null: false       |
-| menu          | string     | null: false       |
-| set_count_id  | integer    | null: false       |
-| rest_id       | integer    | null: false       |
-| user_id       | references | foreign_key: true |
-
+| Column          | Type       | Options           |
+| --------------- | ---------- | ----------------- |
+| name            | string     | null: false       |
+| menu            | string     | null: false       |
+| set_count_id    | integer    | null: false       |
+| rest_id         | integer    | null: false       |
+| user_id         | references | foreign_key: true |
+| workout_time_id | integer    | null: false       |
+| having_user_id  | references | foreign_key: true |
+| status_id       | integer    | null: false       |
 
 ### Association
 
@@ -34,12 +36,13 @@
 
 ## next_routinesテーブル
 
-| Column           | Type       | Options           |
-| ---------------- | ---------- | ----------------- |
-| menu             | string     | null: false       |
-| set_count_id     | integer    | null: false       |
-| rest _id         | integer    | null: false       |
-| routine_id       | references | foreign_key: true |
+| Column          | Type       | Options           |
+| --------------- | ---------- | ----------------- |
+| menu            | string     | null: false       |
+| set_count_id    | integer    | null: false       |
+| rest _id        | integer    | null: false       |
+| routine_id      | references | foreign_key: true |
+| workout_time_id | integer    | null: false       |
 
 
 ### Association
@@ -53,6 +56,7 @@
 | workout_date | date       | null: false       |
 | user_id      | references | foreign_key: true |
 | routine_id   | references | foreign_key: true |
+| routine_name | string     | null: false       |
 
 
 ### Association
