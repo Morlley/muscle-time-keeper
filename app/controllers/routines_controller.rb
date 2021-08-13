@@ -1,5 +1,5 @@
 class RoutinesController < ApplicationController
-  before_action :set_routine, only: [:edit, :update, :destroy]
+  before_action :set_routine, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index_edit, only: [:edit, :update, :destroy]
 
   def index
@@ -44,6 +44,14 @@ class RoutinesController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def show
+  end
+
+  def download
+    Routine.new(download_routine_params).save
+  end
+
+
   private
 
   def set_routine
@@ -69,6 +77,10 @@ class RoutinesController < ApplicationController
 
   def edit_routine_params
     params.require(:routine).permit(:name, :workout_time_id, :menu, :set_count_id, :rest_id, next_routines_attributes: [:menu, :workout_time_id, :set_count_id, :rest_id, :routine_id, :_destroy, :id]).merge(user_id: current_user.id)
+  end
+
+  def download_routine_params
+    params.require(:routine).permit(:name, :workout_time_id, :menu, :set_count_id, :rest_id, next_routines_attributes: [:menu, :workout_time_id, :set_count_id, :rest_id, :routine_id, :_destroy]).merge(user_id: params[:id], having_user_id: current_user.id, status_id: 2)
   end
 
 end

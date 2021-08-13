@@ -12,10 +12,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :routines, except: [:show, :index] do
+  resources :routines, except: :index do
     resources :workouts, only: :new
     collection do
       get "confirm"
+    end
+
+    member do
+      post "download"
     end
   end
 
