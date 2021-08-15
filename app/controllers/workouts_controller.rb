@@ -27,7 +27,7 @@ class WorkoutsController < ApplicationController
   end
 
   def move_to_index
-    if current_user.id != @routine.user_id
+    if current_user.id != @routine.having_user_id
       redirect_to root_path
     end
   end

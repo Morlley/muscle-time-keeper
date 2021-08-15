@@ -5,7 +5,7 @@ class RoutinesController < ApplicationController
 
   def index
     move_to_root
-    @routines = Routine.where(user_id: params[:user_id]).order("created_at DESC")
+    @routines = Routine.where(having_user_id: params[:user_id]).order("created_at DESC")
   end
 
   def new
@@ -66,7 +66,7 @@ class RoutinesController < ApplicationController
   end
 
   def move_to_root_edit
-    if current_user.id != @routine.user.id
+    if current_user.id != @routine.having_user_id
       redirect_to root_path
     end
   end
