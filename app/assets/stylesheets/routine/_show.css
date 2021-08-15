@@ -32,6 +32,11 @@
   color: #FF6633;
 }
 
+.like-display {
+  margin-left: 5px;
+  font-size: 18px;
+}
+
 .show-menu-header {
   border-bottom: 1px dashed #DDD;
   font-weight: bold;
