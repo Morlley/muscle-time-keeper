@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   get 'routines/new'
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
@@ -12,12 +14,19 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :routines, except: [:show, :index] do
+  resources :routines, except: :index do
     resources :workouts, only: :new
     collection do
       get "confirm"
     end
+
+    member do
+      post "download"
+    end
   end
 
   resources :workouts, only: :create
+
+  post 'like/:id' => 'likes#create', as: 'create_like'
+  delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 end

@@ -14,6 +14,15 @@
       </div>
       <%= form.text_field :name, class: "routine-name-input" %>
     </div>
+
+    <% if current_user.id == @routine.user_id %>
+      <div>
+        <div class="routine-form-text">
+          <%= form.label :status_id, "自分のルーティンを公開しますか？" %>
+        </div>
+        <%= form.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box"}) %>
+      </div>
+    <% end %>
     
       <%= render "form", f: form %>
 

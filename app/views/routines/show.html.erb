@@ -1,8 +1,8 @@
-<%= render "shared/second-header" %>
+<%= render "shared/header" %>
 
 <div class="confirm-routine-wrap">
-  <%= form_with model: @routine, class:"confirm-form-wrap" ,local: true do |form|  %>
-    <%# hiddenのinputでcreateアクションにデータを送る %>
+  <%= form_with model: @routine, url: download_routine_path(@routine.id), method: :post, class:"confirm-form-wrap" , local: true do |form|  %>
+    <%# hiddenのinputでdownloadアクションにデータを送る %>
     <div class="hidden">
       <div class="routine-name-wrap">
         <div class="routine-form-text">
@@ -10,7 +10,6 @@
         </div>
       <%= form.text_field :name, class: "routine-name-input" %>
       </div>
-      <%= form.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box"}) %>
 
       <%= render "form", f: form %>
       <%= form.fields_for :next_routines do |next_routine| %>
@@ -25,7 +24,7 @@
         ルーティン名
       </div>
       <p class="routine-name"><%= @routine.name %></p>
-      <span class="confirm-content public-status"><%= @routine.status.name %></span>
+      <p class="confirm-content author-name">作成者 : <%= @routine.user.nickname %></@>
     </div>
 
     <div class="confirm-routine">
@@ -46,14 +45,15 @@
       <% end %>
     <% end %>
 
-    <div class="action">
-      <div class="back-btn-content">
-        <%= form.submit "戻る", name: "back", class: "back-btn" %>
+      <div class="action">
+        <div>
+          <%= form.submit "ダウンロード" %>
+        </div>
+        <div id="routine<%= @routine.id %>">
+          <%= render "like", routine: @routine %>
+        </div>
       </div>
-      <div class="create-btn-content">
-        <%= form.submit "作成", class: "create-btn" %>
-      </div>
-    </div>
+
   <% end %>
 </div>
 

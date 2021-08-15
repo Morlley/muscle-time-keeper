@@ -7,6 +7,12 @@
         <p class="routine-name">
           <%= routine.name %><span class="detail">詳細▼</span>
           <%= link_to "編集", edit_routine_path(routine.id), class: "edit-routine" %>
+          <% if current_user.id == routine.user_id %>
+            <span class="like-display">
+              いいね数
+              <%= routine.likes.count %>
+            </span>
+          <% end %>
         </p>
         <div class="hidden routine-menu-lists">
           <div class="show-menu">

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_09_083213) do
+ActiveRecord::Schema.define(version: 2021_08_15_074947) do
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "routine_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["routine_id"], name: "index_likes_on_routine_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
 
   create_table "next_routines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "menu", null: false
@@ -32,6 +41,9 @@ ActiveRecord::Schema.define(version: 2021_08_09_083213) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "workout_time_id"
+    t.bigint "having_user_id"
+    t.integer "status_id", null: false
+    t.index ["having_user_id"], name: "index_routines_on_having_user_id"
     t.index ["user_id"], name: "index_routines_on_user_id"
   end
 
@@ -69,8 +81,11 @@ ActiveRecord::Schema.define(version: 2021_08_09_083213) do
     t.index ["user_id"], name: "index_workouts_on_user_id"
   end
 
+  add_foreign_key "likes", "routines"
+  add_foreign_key "likes", "users"
   add_foreign_key "next_routines", "routines"
   add_foreign_key "routines", "users"
+  add_foreign_key "routines", "users", column: "having_user_id"
   add_foreign_key "sns_credentials", "users"
   add_foreign_key "workouts", "routines"
   add_foreign_key "workouts", "users"
