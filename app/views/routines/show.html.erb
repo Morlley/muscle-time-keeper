@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="confirm-routine-wrap">
-  <%= form_with model: @routine, url: download_routine_path(@routine.user.id), method: :post, class:"confirm-form-wrap" , local: true do |form|  %>
+  <%= form_with model: @routine, url: download_routine_path(@routine.id), method: :post, class:"confirm-form-wrap" , local: true do |form|  %>
     <%# hiddenのinputでdownloadアクションにデータを送る %>
     <div class="hidden">
       <div class="routine-name-wrap">

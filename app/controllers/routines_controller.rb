@@ -1,5 +1,5 @@
 class RoutinesController < ApplicationController
-  before_action :set_routine, only: [:show, :edit, :update, :destroy]
+  before_action :set_routine, only: [:show, :download, :edit, :update, :destroy]
   before_action :move_to_root_edit, only: [:edit, :update, :destroy]
   before_action :move_to_root_download, only: [:show, :download]
 
@@ -87,7 +87,7 @@ class RoutinesController < ApplicationController
   end
 
   def download_routine_params
-    params.require(:routine).permit(:name, :workout_time_id, :menu, :set_count_id, :rest_id, next_routines_attributes: [:menu, :workout_time_id, :set_count_id, :rest_id, :routine_id, :_destroy]).merge(user_id: params[:id], having_user_id: current_user.id, status_id: 2)
+    params.require(:routine).permit(:name, :workout_time_id, :menu, :set_count_id, :rest_id, next_routines_attributes: [:menu, :workout_time_id, :set_count_id, :rest_id, :routine_id, :_destroy]).merge(user_id: @routine.user.id, having_user_id: current_user.id, status_id: 2)
   end
 
 end
