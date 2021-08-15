@@ -1,0 +1,11 @@
+<% if current_user.liked_by?(routine.id) %>
+  <%= link_to destroy_like_path(routine.id), method: :delete, remote: true do %>
+    <i class="fas fa-heart unlike-btn"></i>
+  <% end %>
+  <%= routine.likes.count %>
+<% else %>
+  <%= link_to create_like_path(routine.id), method: :post, remote: true do %>
+    <i class="fas fa-heart like-btn"></i>
+  <% end %>
+  <%= routine.likes.count %>
+<% end %>
