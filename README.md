@@ -63,3 +63,16 @@
 
 - belongs_to :user
 - belongs_to :routine
+
+## workoutsテーブル
+
+| Column       | Type       | Options           |
+| ------------ | ---------- | ----------------- |
+| user_id      | references | foreign_key: true |
+| routine_id   | references | foreign_key: true |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :routine
