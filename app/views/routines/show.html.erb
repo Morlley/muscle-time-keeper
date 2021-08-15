@@ -46,8 +46,19 @@
     <% end %>
 
       <div class="action">
-        <div class="create-btn-content">
-          <%= form.submit "ダウンロード", class: "create-btn" %>
+        <div>
+          <%= form.submit "ダウンロード" %>
+        </div>
+        <div>
+          <% if current_user.liked_by?(@routine.id) %>
+            <%= link_to destroy_like_path(@routine.id), method: :delete do %>
+              <i class="fas fa-heart unlike-btn"></i>
+            <% end %>
+          <% else %>
+            <%= link_to create_like_path(@routine.id), method: :post do %>
+              <i class="fas fa-heart like-btn"></i>
+            <% end %>
+          <% end %>
         </div>
       </div>
 
