@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  has_many :routines
+  has_many :workouts
+  has_many :sns_credentials
+  has_many :likes
+
   with_options presence: true do
     validates :nickname
     validates :birthday
@@ -11,10 +16,6 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d_-]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'は半角英数記号で入力してください'
-
-  has_many :routines
-  has_many :workouts
-  has_many :sns_credentials
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
