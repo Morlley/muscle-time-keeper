@@ -51,6 +51,7 @@ class RoutinesController < ApplicationController
 
   def download
     Routine.new(download_routine_params).save
+    redirect_to user_path(current_user.id)
   end
 
 
