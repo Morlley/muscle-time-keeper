@@ -51,4 +51,9 @@
     <%= f.hidden_field :routine_name, value: @routine.name %>
     <%= f.submit "終了する", class: "hidden workout-btn", id:"finish-workout-btn" %>
   <% end  %>
+
+  <div class="hidden" id="inform-finish-workout">
+    <p>お疲れさまでした！</p>
+    <p>終了ボタンを押してください</p>
+  </div>
 </div>
