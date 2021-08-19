@@ -11,6 +11,7 @@
   background-color: white;
   width: 50%;
   padding-bottom: 70px;
+  min-height: calc(100vh - 170px);
 }
 
 .form-header {
