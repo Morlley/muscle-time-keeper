@@ -1,6 +1,6 @@
 <header class="first-header">
   <div><%= link_to image_tag("logo1.png", class: "header-logo"), root_path %></div>
-  <%= link_to "#", class: "search header-link" do %>
+  <%= link_to search_routines_path, class: "search header-link" do %>
     <div>みんなのルーティンを探す</div>
   <% end %>
   <%= link_to new_routine_path, class: "create-routine header-link" do %>
