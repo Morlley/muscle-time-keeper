@@ -1,3 +1,7 @@
+.contents{
+  min-height: calc(100vh - 170px);
+}
+
 // カレンダー部分のcss
 .calendar-header {
   display: flex;
