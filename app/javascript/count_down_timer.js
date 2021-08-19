@@ -1,6 +1,7 @@
 function countDownTimer (){
   const startBtn = document.getElementById("begin-workout-btn");
   const finishBtn = document.getElementById("finish-workout-btn");
+  const informFinishWorkoutText = document.getElementById("inform-finish-workout");
   const routineLength = Number(document.getElementById("routine-length").innerText);
   let actionNum = 1;
 
@@ -60,6 +61,7 @@ function countDownTimer (){
             workoutContent.classList.add("hidden");
             // 終了ボタンを表示させる
             finishBtn.classList.remove("hidden");
+            informFinishWorkoutText.classList.remove("hidden");
             return;
           };
           

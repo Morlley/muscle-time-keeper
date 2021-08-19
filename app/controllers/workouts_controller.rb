@@ -15,6 +15,7 @@ class WorkoutsController < ApplicationController
   def create
     workout = Workout.new(workout_params)
     if workout.save
+      redirect_to root_path
     else
       render :new
     end
