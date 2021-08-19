@@ -26,6 +26,7 @@ class RoutinesController < ApplicationController
       render :new
     else
       @routine.save
+      redirect_to user_path(current_user.id)
     end
   end
 
