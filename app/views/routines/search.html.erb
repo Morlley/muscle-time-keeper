@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+
+<div class="contents">
+  <div id="result-wrap">
+    <div class="search-form-wrap">
+      <%= search_form_for @q, url: search_routines_path do |f| %>
+        <%= f.search_field :name_or_menu_or_next_routines_menu_cont, placeholder: "ルーティン名、トレーニング名で検索", class: "search-form" %>
+        <%= f.submit "検索", class:"search-btn" %>
+      <% end %>
+    </div>
+    <div class="sort-action">
+      <%= sort_link(@q, :created_at, "作成順", default_order: :desc, hide_indicator: true, class: "sort-btn") %>
+      <%= sort_link(@q, :likes_count, "人気順", default_order: :desc, hide_indicator: true, class: "sort-btn") %>
+    </div>
+    
+    <%= render "routine_list" %>
+  
+  </div>
+  <div class="more" id='view-more' >
+    <%= link_to_next_page @results, 'もっと見る', remote: true, class: "more-routine-btn" %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

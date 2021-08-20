@@ -1,0 +1,2 @@
+document.getElementById("result-wrap").insertAdjacentHTML("beforeend", "<%= j(render 'routine_list') %>");
+document.getElementById("view-more").innerHTML = "<%= j(link_to_next_page @results, 'もっと見る', remote: true, class: "more-routine-btn") %>";

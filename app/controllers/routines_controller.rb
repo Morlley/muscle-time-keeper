@@ -2,6 +2,7 @@ class RoutinesController < ApplicationController
   before_action :set_routine, only: [:show, :download, :edit, :update, :destroy]
   before_action :move_to_root_edit, only: [:edit, :update, :destroy]
   before_action :move_to_root_download, only: [:show, :download]
+  before_action :set_q, only: :search
 
   def index
     move_to_root
@@ -54,11 +55,18 @@ class RoutinesController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def search
+    @results = @q.result(distinct: true).where(status_id: 1).where.not(user_id: current_user.id).includes( :next_routines, :likes).order("created_at DESC").page(params[:page]).per(15)
+  end
 
   private
 
   def set_routine
     @routine = Routine.find(params[:id])
+  end
+
+  def set_q
+    @q = Routine.ransack(params[:q])
   end
 
   def move_to_root

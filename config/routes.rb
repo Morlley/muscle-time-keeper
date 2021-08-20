@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :workouts, only: :new
     collection do
       get "confirm"
+      get "search"
     end
 
     member do

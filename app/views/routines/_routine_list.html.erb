@@ -1,0 +1,11 @@
+<div class="result-routine-lists">
+  <% @results.each do |routine| %>
+    <div class="search-result-list">
+      <p class="search-result-info">
+        <%= link_to routine.name.html_safe, routine_path(routine.id), class: "result-routine-name" %>
+      </p>
+      <p class="search-result-info">いいね数：<%= routine.likes.count %></p>
+      <p class="search-result-info"><%= routine.created_at.year %>-<%= routine.created_at.month %>-<%= routine.created_at.day %></p>
+    </div>
+  <% end %>
+</div>
