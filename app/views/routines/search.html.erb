@@ -1,15 +1,16 @@
 <%= render "shared/header" %>
 
 <div class="contents">
-  <%= search_form_for @q, url: search_routines_path do |f| %>
-    <%= f.search_field :name_or_menu_or_next_routines_menu_cont, placeholder: "ルーティン名、トレーニング名で検索" %>
-    <%= f.submit "検索" %>
-  <% end %>
-  <% @results.each do |routine| %>
-    <%= routine.name %>
-  <% end %>
-  <%= sort_link(@q, :created_at, "新着順", default_order: :desc) %>
-  <%= sort_link(@q, :likes_count, "人気順", default_order: :desc) %>
+  <div id="routine-lists">
+    <%= search_form_for @q, url: search_routines_path do |f| %>
+      <%= f.search_field :name_or_menu_or_next_routines_menu_cont, placeholder: "ルーティン名、トレーニング名で検索" %>
+      <%= f.submit "検索" %>
+    <% end %>
+    <%= render "routine_list" %>
+    <%= sort_link(@q, :created_at, "新着順", default_order: :desc) %>
+    <%= sort_link(@q, :likes_count, "人気順", default_order: :desc) %>
+  </div>
+  <div class="more"><%= link_to_next_page @results, 'もっと見る', remote: true, id: 'view-more' %></div>
 </div>
 
 <%= render "shared/footer" %>

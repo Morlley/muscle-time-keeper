@@ -56,7 +56,7 @@ class RoutinesController < ApplicationController
   end
 
   def search
-    @results = @q.result.where(status_id: 1).where.not(user_id: current_user.id).includes(:likes).order("created_at DESC").uniq
+    @results = @q.result(distinct: true).where(status_id: 1).where.not(user_id: current_user.id).includes(:likes).order("created_at DESC").page(params[:page]).per(15)
   end
 
   private
