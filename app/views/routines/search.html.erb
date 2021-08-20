@@ -10,7 +10,7 @@
     <%= sort_link(@q, :created_at, "新着順", default_order: :desc) %>
     <%= sort_link(@q, :likes_count, "人気順", default_order: :desc) %>
   </div>
-  <div class="more"><%= link_to_next_page @results, 'もっと見る', remote: true, id: 'view-more' %></div>
+  <div class="more" id='view-more' ><%= link_to_next_page @results, 'もっと見る', remote: true %></div>
 </div>
 
 <%= render "shared/footer" %>
