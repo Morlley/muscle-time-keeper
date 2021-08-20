@@ -23,4 +23,9 @@ class Routine < ApplicationRecord
     validates :set_count_id
     validates :rest_id
   end
+
+  ransacker :likes_count do
+    query = '(SELECT COUNT(likes.routine_id) FROM likes where likes.routine_id = routines.id GROUP BY likes.routine_id)'
+    Arel.sql(query)
+  end
 end
