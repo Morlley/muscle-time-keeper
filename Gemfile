@@ -65,3 +65,4 @@ gem "omniauth-rails_csrf_protection"
 gem 'omniauth', '~>1.9.1'
 gem "cocoon"
 gem "ransack"
+gem "kaminari"
