@@ -6,6 +6,7 @@ function countDownTimer (){
   let actionNum = 1;
 
   const audio = document.getElementById("audio-js");
+  audio.volume = 0.2;
 
   startBtn.addEventListener("click", () => {
     startBtn.setAttribute("class", "hidden");
