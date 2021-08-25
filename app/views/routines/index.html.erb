@@ -3,8 +3,9 @@
 <div class="contents">
   <div class="workout-contents">
     <% if @routines.present? %>
-      <h1 class="begin-workout-header">開始するルーティンを選択してください</h1>
-  
+      <div class="begin-workout-background">
+        <h1 class="begin-workout-header">開始するルーティンを選択してください</h1>
+      </div>
       <% @routines.each do |routine| %>
         <div class="routine-list">
           <p class="routine-name">
@@ -33,5 +34,7 @@
     <% end %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'show_detail' %>
 
 <%= render "shared/footer" %>

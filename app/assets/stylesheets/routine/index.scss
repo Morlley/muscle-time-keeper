@@ -3,11 +3,21 @@
   text-align: center;
 }
 
+.begin-workout-background {
+  width: 70%;
+  margin: 0 auto;
+  background-image: image-url("begin-workout.jpg");
+  background-size: cover;
+  background-position: center center; 
+  height: 200px;
+}
+
 .begin-workout-header {
+  color: white;
   font-size: 30px;
   display: inline-block;
   font-weight: bold;
-  border-bottom:1px solid #CCC ;
+  line-height: 200px;
 }
 
 .begin-workout {
