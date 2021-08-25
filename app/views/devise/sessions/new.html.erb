@@ -1,4 +1,4 @@
-<div class="login_contents">
+<div class="login-contents">
   <div class="apps-wrap">
     <div class="apps-logo-wrap">
       <%= link_to image_tag("logo2.png", class:"apps-logo"), root_path %>
@@ -11,7 +11,6 @@
       </ul>
     </div>
   </div>
-
   <div class="how-to-login">
     <%= form_with model: @user, url: user_session_path, class: 'email-login-wrap', local: true do |f| %>
       <div class='login-flash-message'>
@@ -20,14 +19,14 @@
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">メールアドレス</label>
+          <label class="login-form-text">メールアドレス</label>
           <span class="indispensable">必須</span>
         </div>
         <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">パスワード</label>
+          <label class="login-form-text">パスワード</label>
           <span class="indispensable">必須</span>
         </div>
         <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
@@ -36,9 +35,9 @@
         <%= f.submit "ログイン" ,class:"login-red-btn" %>
       </div>
     <% end %>
-    <%= link_to "パスワードをお忘れですか？", "#" %>
+    <%= link_to "パスワードをお忘れですか？", "#", class: "forget-password" %>
     <div class="sns-login">
-      <h2 class="sns-header">SNSアカウントをお持ちの方</h2>
+      <h2 class="login-sns-header">SNSアカウントをお持ちの方</h2>
       <div class="sns-login-wrap">
         <%= link_to user_facebook_omniauth_authorize_path, method: :post, class: "facebook-login" do %>
           <span class="fab fa-facebook-square"></span>
@@ -54,7 +53,6 @@
       <p id="display-registration-modal">新規作成</p>
     </div>
   </div>
-
 </div>
 
 <%# (始)新規登録モーダル %>
@@ -82,5 +80,3 @@
 <%# (終)新規登録モーダル %>
 
 <%= javascript_pack_tag 'users_session' %>
-
-<%= render "shared/footer" %>

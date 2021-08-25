@@ -1,12 +1,19 @@
-.login_contents {
-  min-height: calc(100vh - 170px);
+.login-contents {
+  height: 100vh;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: image-url("running_machine.jpg");
+  background-size: cover;
   display: flex;
-  padding: 60px 40px;
 }
 
 .apps-wrap {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .apps-info {
@@ -29,7 +36,7 @@
 .apps-info {
   width: 100%;
   font-size: 2vw;
-  color: #AAAAAA;
+  color: white;
   display: inline-block;
   margin-bottom: 40px;
 }
@@ -37,7 +44,9 @@
 .how-to-login {
   width: 80%;
   text-align: center;
-  border-left: 2px  solid #EEEEEE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .email-login-wrap {
@@ -45,6 +54,9 @@
   padding-bottom: 20px;
 }
 
+.login-form-text {
+  color: white;
+}
 
 .login-btn {
   width: 50%;
@@ -60,11 +72,16 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .login-flash-message {
   text-align: center;
-  color: red;
+  color: #ea352d;
+}
+
+.forget-password {
+  color: 	#00FFFF
 }
 
 .sns-login {
@@ -75,15 +92,21 @@
   margin-top: 15px;
 }
 
+.login-sns-header {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .facebook-login {
   font-size: 35px;
-  color: #3B5998;
+  color: white;
   margin-right: 30px;
 }
 
 .google-login {
   font-size: 35px;
-  color: #DB4437;
+  color: white;
 }
 
 .login-border{
@@ -94,11 +117,11 @@
 
 .to-registration {
   margin-top: 15px;
-  color: #666666;
+  color: white;
 }
 
 #display-registration-modal {
-  color: #0000EE;
+  color: #00FFFF;
   cursor: pointer;
 }
 
