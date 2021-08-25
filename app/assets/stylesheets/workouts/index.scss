@@ -1,5 +1,6 @@
 .contents{
   min-height: calc(100vh - 170px);
+  padding-bottom: 50px;
 }
 
 // カレンダー部分のcss
@@ -28,7 +29,7 @@
   line-height: 50px;
   font-size: 50px;
   color: 	#666666;
-  background-color: blanchedalmond;
+  background-color: #EEEEEE;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -87,6 +88,7 @@
   border: 1px solid gray;
   padding: 1px;
   text-align: right;
+  overflow: auto;
   
   span {
     margin-bottom: 3px;
@@ -100,7 +102,7 @@
 }
 
 .sunday_or_saturday {
-  background-color: blanchedalmond;
+  background-color: 	#EEE;
 }
 
 .this-month-day.sunday_or_saturday {
