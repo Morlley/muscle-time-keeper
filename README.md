@@ -90,6 +90,7 @@ Muscle Time Keeper
   [![Image from Gyazo](https://i.gyazo.com/c47853941ba7975281d1f7009f253304.gif)](https://gyazo.com/c47853941ba7975281d1f7009f253304)
 
 # 実装予定の機能
+- レスポンシブデザインに対応します。
 - ユーザー情報を編集できるようにします。
 - モチベーションを維持できるような機能を実装します。
 
