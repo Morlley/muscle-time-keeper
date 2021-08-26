@@ -32,7 +32,7 @@ class User < ApplicationRecord
     { user: user, sns: sns }
   end
 
-  def liked_by?(routine_id)
-    Like.where(routine_id: routine_id).exists?
+  def liked_by?(user_id, routine_id)
+    Like.where(user_id: user_id, routine_id: routine_id).exists?
   end
 end
