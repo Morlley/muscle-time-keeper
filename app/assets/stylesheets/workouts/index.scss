@@ -1,3 +1,9 @@
+.root-background {
+  background-image: image-url("sunset.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
 .contents{
   min-height: calc(100vh - 170px);
   padding-bottom: 50px;
@@ -8,7 +14,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 10px;
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -16,6 +22,7 @@
   font-size: 45px;
   font-weight: bold;
   margin: 0 50px;
+  color: #EEE;
 }
 
 .move-month {
@@ -62,15 +69,19 @@
 }
 
 .wday, .wday-h {
-  min-width: 168px;
-  width: calc(80% / 7);
-  border: 1px solid gray;
+  min-width: 142px;
+  width: calc(70% / 7);
+  border: 1px solid #EEE;
   font-size: 18px;
   font-weight: bold;
 }
 
 .wday-h {
-  color: #AAAAAA;
+  color: white;
+}
+
+.wday {
+  color:#EEE;
 }
 
 .week {
@@ -82,10 +93,10 @@
 
 .pre-day, .this-month-day, .post-day {
   min-height: 100px;
-  min-width: 168px;
+  min-width: 142px;
   height: calc((100vh - 100px) / 6);
-  width: calc(80% / 7);
-  border: 1px solid gray;
+  width: calc(70% / 7);
+  border: 1px solid #EEE;
   padding: 1px;
   text-align: right;
   overflow: auto;
@@ -97,18 +108,12 @@
   }
 }
 
+.this-month-day {
+  color: #EEE;
+}
+
 .pre-day, .post-day {
-  color: #CCCCCC;
-}
-
-.sunday_or_saturday {
-  background-color: 	#EEE;
-}
-
-.this-month-day.sunday_or_saturday {
-  .not-today {
-    color:#777777;
-  }
+  color: #AAA;
 }
 
 .today {

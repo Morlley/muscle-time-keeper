@@ -1,5 +1,5 @@
 <%= render "shared/header" %>
-
+<div class="root-background">
 <div class="contents">
   <div class="calendar-header">
       <p class="month"><%= @date.year %>年<%= @date.month %>月</p>
@@ -56,7 +56,7 @@
     <% end %> 
   </div>
 </div>
-
+</div>
 <%= javascript_pack_tag 'workouts_index' %>
 
 <%= render "shared/footer" %>
