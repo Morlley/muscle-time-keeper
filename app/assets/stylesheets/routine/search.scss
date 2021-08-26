@@ -1,3 +1,15 @@
+.search-background {
+  background-image: image-url("two-dumbbel.jpg");
+}
+
+.result-paper{
+  min-height: calc(100vh - 170px);
+  padding-bottom: 50px;
+  width: 60%;
+  margin: 0 auto;
+  background-color: rgba(85, 85, 85, 0.5);
+}
+
 .search-form-wrap {
   text-align: center;
 }
@@ -18,13 +30,12 @@
   text-align: right;
   margin: 20px 0;
   font-size: 20px;
-  color: #555;
 }
 
 .sort_link {
-  color: white;
-  border: 2px solid #666;
-  background-color: #888;
+  color: #555;
+  border: 2px solid #444;
+  background-color: #EEE;
   border-radius: 5px;
   padding: 2px;
 }
@@ -43,18 +54,18 @@
 .search-result-info {
   font-size: 23px;
   margin: 0 20px;
-  color: #555;
+  color: #EEE;
   width: 200px;
 }
 
 .result-routine-name {
-  color: #555;
-  border-bottom: 1px solid #555;
+  color: #EEE;
+  border-bottom: 1px solid #EEE;
 }
 
 .result-routine-name:hover{
-  color: #BB0000;
-  border-bottom: 1px solid #BB0000;
+  color: #FF0000;
+  border-bottom: 1px solid #FF0000;
 }
 
 .more {
@@ -67,8 +78,8 @@
   border-radius: 5px;
   font-size: 30px;
   padding: 5px;
-  color:white;
-  background-color: #888;
+  color: #555;
+  background-color: #EEE;
 }
 
 .more-routine-btn:active {
