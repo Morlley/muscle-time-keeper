@@ -1,8 +1,9 @@
 .first-footer {
   width: 100%;
   height: 100px;
-  background-color: white;
+  background-color: #333;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #444;
+  color: #EEE;
 }

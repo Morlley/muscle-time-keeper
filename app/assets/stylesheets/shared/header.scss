@@ -1,11 +1,11 @@
 .first-header {
   width: 100%;
   height: 70px;
-  background-color: white;
+  background-color: #333333;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #444444;
   padding: 2px 70px;
 }
 
@@ -18,15 +18,15 @@
   transition-duration: 0.2s;
   transition-delay: 0s;
   transition-timing-function: linear;
-  color: #666666;
+  color: #EEEEEE;
   text-align: center;
 }
 
 
 .header-link:hover {
   filter: brightness(1.5);
-  color: #BB0000;
-  border-color: #BB0000;
+  color: #FF0000;
+  border-color: #FF0000;
 }
 
 .search, .create-routine {
@@ -55,7 +55,7 @@
 
 .user-logo {
   width: 60px;
-  border: 2px solid #666666;
+  border: 2px solid #EEE;
   border-radius: 50px;
   padding: 9px;
   cursor: pointer;
