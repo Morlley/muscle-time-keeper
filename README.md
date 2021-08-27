@@ -51,48 +51,48 @@ Muscle Time Keeper
 - メイン機能である「トレーニング（ワークアウト）のタイムと休憩（インターバル）のタイムを自動で管理」する機能の説明
 
   - トップページの「ワークアウトを開始」ボタンからトレーニングを実施できます。
-  [![Image from Gyazo](https://i.gyazo.com/9d2bfdeb79df25fc04ad6a2b89b73d82.gif)](https://gyazo.com/9d2bfdeb79df25fc04ad6a2b89b73d82)  
+  [![Image from Gyazo](https://i.gyazo.com/8d4e0ba0908d9accb74056916c6dab8c.gif)](https://gyazo.com/8d4e0ba0908d9accb74056916c6dab8c)  
 
   - 「スタート」ボタンを押すことでカウントダウンが始まります。
-  [![Image from Gyazo](https://i.gyazo.com/3bb45a38332e846f7b8cf7271feb3e9e.gif)](https://gyazo.com/3bb45a38332e846f7b8cf7271feb3e9e)  
+  [![Image from Gyazo](https://i.gyazo.com/bb6d19a70c3aac66fb90a4403b07f69e.gif)](https://gyazo.com/bb6d19a70c3aac66fb90a4403b07f69e)  
 
-  - ワークアウトの残り時間が3秒になるとサウンドがなります。0秒になるとRest（休憩時間）に切り替わります。
-  [![Image from Gyazo](https://i.gyazo.com/893618f0188c84721614bd8c6ebba22f.gif)](https://gyazo.com/893618f0188c84721614bd8c6ebba22f)  
+  - ワークアウトの残り時間が3秒になるとサウンドがなります（GIFのため聞こえません。）。0秒になるとRest（休憩時間）に切り替わります。
+  [![Image from Gyazo](https://i.gyazo.com/97855eea089c89ae57c06fdc25ab6fa4.gif)](https://gyazo.com/97855eea089c89ae57c06fdc25ab6fa4)  
 
   - Restの残り時間とセット数が0になり、次のメニューがある場合は自動的に切り替わります。
-  [![Image from Gyazo](https://i.gyazo.com/38080b2ea086ec251b50034fb0815e61.gif)](https://gyazo.com/38080b2ea086ec251b50034fb0815e61)  
+  [![Image from Gyazo](https://i.gyazo.com/5fb2af0c61e17c6dfed12b2d82485577.gif)](https://gyazo.com/5fb2af0c61e17c6dfed12b2d82485577)  
 
 - ユーザー管理機能
   - ユーザーを新規登録できます。方法として、「メールアドレスで登録」・「SNSアカウントを用いて登録」の2種類があります。
   [![Image from Gyazo](https://i.gyazo.com/fce7b0f6fbfd0170a3b9c59fe6ef1ab2.gif)](https://gyazo.com/fce7b0f6fbfd0170a3b9c59fe6ef1ab2)  
 
   - ログインも「メールアドレスで登録」・「SNSアカウントを用いて登録」の2種類で行えます。
-  [![Image from Gyazo](https://i.gyazo.com/8a67540c464d9655635cbf8f8ea7594b.gif)](https://gyazo.com/8a67540c464d9655635cbf8f8ea7594b)  
+  [![Image from Gyazo](https://i.gyazo.com/0ae84e0d4a240d07f75401ff0391be15.gif)](https://gyazo.com/0ae84e0d4a240d07f75401ff0391be15)  
   
 - オリジナルのルーティンを作成することができる機能
   - 各項目を入力することで作成できます。また公開・非公開を選ぶこともできます。
-  [![Image from Gyazo](https://i.gyazo.com/ad201f09f978cc116bb7f8bda5327497.gif)](https://gyazo.com/ad201f09f978cc116bb7f8bda5327497)  
+  [![Image from Gyazo](https://i.gyazo.com/e6c65e0e18208a48fe00b9af02b7a97b.gif)](https://gyazo.com/e6c65e0e18208a48fe00b9af02b7a97b)  
 
   - メニューを追加することもできます。
-  [![Image from Gyazo](https://i.gyazo.com/bc009051f0c1be288ea8608f7614d414.gif)](https://gyazo.com/bc009051f0c1be288ea8608f7614d414)  
+  [![Image from Gyazo](https://i.gyazo.com/81ad56bcc6b0aec9d3801d3ee3f45b41.gif)](https://gyazo.com/81ad56bcc6b0aec9d3801d3ee3f45b41)  
 
   - 全項目を入力し、確認ページで作成を押すことで完了です。
-  [![Image from Gyazo](https://i.gyazo.com/ff4361dc6dcfddbfc8a17fdfcb2e8d28.gif)](https://gyazo.com/ff4361dc6dcfddbfc8a17fdfcb2e8d28)  
+  [![Image from Gyazo](https://i.gyazo.com/2b5313532f2277c338c464f4d41c4f31.gif)](https://gyazo.com/2b5313532f2277c338c464f4d41c4f31)  
 
 - 他のユーザーが作成したルーティンを検索できる機能
-  - ルーティン名・トレーニング名から検索できます。詳細ページへ遷移するとダウンロードもできます。
-  [![Image from Gyazo](https://i.gyazo.com/681e72153410a04e3b6b51e4b46ddc30.gif)](https://gyazo.com/681e72153410a04e3b6b51e4b46ddc30)  
+  - ルーティン名・トレーニング名から検索できます。
+  [![Image from Gyazo](https://i.gyazo.com/beeae3a79637c928447607bbebefaaf9.gif)](https://gyazo.com/beeae3a79637c928447607bbebefaaf9)  
 
-  - いいねをすることもできます
-  [![Image from Gyazo](https://i.gyazo.com/183e92b6007f683f34b3a06f401e377d.gif)](https://gyazo.com/183e92b6007f683f34b3a06f401e377d)  
+  - 詳細ページへ遷移するといいねとダウンロードができます。
+  [![Image from Gyazo](https://i.gyazo.com/c8ba7ae73337f1ab466e3eddf4b4d460.gif)](https://gyazo.com/c8ba7ae73337f1ab466e3eddf4b4d460)  
 
 - 日々のトレーニングの進捗状況をカレンダーで管理します
-  [![Image from Gyazo](https://i.gyazo.com/c47853941ba7975281d1f7009f253304.gif)](https://gyazo.com/c47853941ba7975281d1f7009f253304)
+  [![Image from Gyazo](https://i.gyazo.com/7dfe16f8200566a272d0959a306b1b32.gif)](https://gyazo.com/7dfe16f8200566a272d0959a306b1b32)
 
 # 実装予定の機能
 - レスポンシブデザインに対応します。
 - ユーザー情報を編集できるようにします。
-- モチベーションを維持できるような機能を実装します。
+- 月によってカレンダーの背景画像が変わる機能を実装します。
 
 # データベース設計
 
