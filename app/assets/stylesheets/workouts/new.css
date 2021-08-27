@@ -1,5 +1,6 @@
 .workout-new-background {
-  background-position: center bottom;
+  background-size: contain;
+  background-position: center top;
 }
 
 .workout-wrap {
