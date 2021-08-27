@@ -1,12 +1,4 @@
-<%# pre-dayかつ日曜日もしくは土曜日かを判断 %>
-<% if i % 7 == 0 || i % 7 == 6 %>
-  <div class="pre-day sunday_or_saturday">
-    <%= render partial: "get-day", locals: {day: day, i: i} %>
-  </div>
-<% else %>
-
-<%# 日曜日と土曜日以外のpre-dayが取得される %>
+<%# pre-dayが取得される %>
   <div class="pre-day">
     <%= render partial: "get-day", locals: {day: day, i: i} %>
   </div>
-<% end %>

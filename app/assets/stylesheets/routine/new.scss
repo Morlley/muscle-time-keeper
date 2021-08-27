@@ -1,24 +1,23 @@
 /* confirm、editでも使用しているものあり */
-.new-routine-wrap, .confirm-routine-wrap, .edit-routine-wrap {
-  background-color: #EEEEEE;
+.routine-background {
+  background-image: image-url("dumbbel.jpg");
+  background-size: cover;
   text-align: center;
-  width: 100%;
-  padding: 0 30px;
-  color: #555555;
+  color: #EEE;
 }
 
 .routine-form-wrap, .confirm-form-wrap{
-  background-color: white;
+  background-color: rgba(85, 85, 85, 0.5);
   padding: 30px 0;
   min-height: calc(100vh - 170px);
   overflow: auto;
-  width: 80%;
+  width: 65%;
   margin: 0 auto;
 }
 
 .routine-form-header {
   font-size: 24px;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #EEE;
   width: 270px;
   margin: 0 auto;
 }
@@ -43,8 +42,17 @@
   display: inline-block;
 }
 
+.add-nested-btn {
+  color: #32EEFF;
+  border-bottom: 1px solid #32EEFF;
+}
+
 .remove-nested-btn {
+  color: #00ECFF;
+  border-bottom: 1px solid #00ECFF;
   display: block;
+  width: 36px;
+  margin: 0 auto;
 }
 
 .routine-form-text {

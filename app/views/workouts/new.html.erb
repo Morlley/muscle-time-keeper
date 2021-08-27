@@ -1,60 +1,62 @@
-<div class="workout-wrap">
-  
-  <div class="workout-name"><%= @routine.name %></div>
+<div class="workout-new-background">
+  <div class="workout-wrap">
 
-  <button class="workout-btn" id="begin-workout-btn">スタート</button>
-  <%= audio_tag 'countdown.mp3', id:"audio-js" %>
+    <div class="workout-name"><%= @routine.name %></div>
 
-  <div class="workout-content" id="workout-content1">
-    <div class="workout-menu">No.1: <span><%= @routine.menu %></span></div>
-    <div class="time-wrap">
-      <div class="current-state" id="current-state1">Workout</div>
-      <div class="last-seconds-wrap">
-        <p>残り</p>
-        <div class="last-seconds" id="workout-time1"><%= @routine.workout_time.seconds %></div>
-        <div class=" hidden last-seconds" id="workout-rest1"><%= @routine.rest.seconds %></div>
-        <p>秒</p>
-      </div>
-    </div>
-    <div class="last-set-wrap">
-      <p>あと</p>
-      <div class="last-set" id="workout-set-count1"><%= @routine.set_count.name %></div>
-      <p>セット</p>
-    </div>
-  </div>
+    <button class="workout-btn" id="begin-workout-btn">スタート</button>
+    <%= audio_tag 'countdown.mp3', id:"audio-js" %>
 
-  <% @routine.next_routines.each_with_index do |next_routine, i| %>
-    <div class="workout-content" id="workout-content<%= i + 2 %>">
-      <div class="workout-menu">No.<%= i + 2 %>: <span><%= next_routine.menu %></span></div>
+    <div class="workout-content" id="workout-content1">
+      <div class="workout-menu">No.1: <span><%= @routine.menu %></span></div>
       <div class="time-wrap">
-        <div class="current-state" id="current-state<%= i + 2 %>">Workout</div>
+        <div class="current-state" id="current-state1">Workout</div>
         <div class="last-seconds-wrap">
           <p>残り</p>
-          <div class="last-seconds" id="workout-time<%= i + 2 %>"><%= next_routine.workout_time.seconds %></div>
-          <div class="hidden last-seconds" id="workout-rest<%= i + 2 %>"><%= next_routine.rest.seconds%></div>
+          <div class="last-seconds" id="workout-time1"><%= @routine.workout_time.seconds %></div>
+          <div class=" hidden last-seconds" id="workout-rest1"><%= @routine.rest.seconds %></div>
           <p>秒</p>
         </div>
       </div>
       <div class="last-set-wrap">
         <p>あと</p>
-        <div class="last-set" id="workout-set-count<%= i + 2 %>"><%= next_routine.set_count.name %></div>
+        <div class="last-set" id="workout-set-count1"><%= @routine.set_count.name %></div>
         <p>セット</p>
       </div>
     </div>
-  <% end %>
 
-  <div class="hidden" id="routine-length"><%= @routine.next_routines.length + 1 %></div>
+    <% @routine.next_routines.each_with_index do |next_routine, i| %>
+      <div class="workout-content" id="workout-content<%= i + 2 %>">
+        <div class="workout-menu">No.<%= i + 2 %>: <span><%= next_routine.menu %></span></div>
+        <div class="time-wrap">
+          <div class="current-state" id="current-state<%= i + 2 %>">Workout</div>
+          <div class="last-seconds-wrap">
+            <p>残り</p>
+            <div class="last-seconds" id="workout-time<%= i + 2 %>"><%= next_routine.workout_time.seconds %></div>
+            <div class="hidden last-seconds" id="workout-rest<%= i + 2 %>"><%= next_routine.rest.seconds%></div>
+            <p>秒</p>
+          </div>
+        </div>
+        <div class="last-set-wrap">
+          <p>あと</p>
+          <div class="last-set" id="workout-set-count<%= i + 2 %>"><%= next_routine.set_count.name %></div>
+          <p>セット</p>
+        </div>
+      </div>
+    <% end %>
 
-  <%= form_with model: @workout, local: true do |f|%>
-    <%= f.hidden_field :workout_date, value: Date.today %>
-    <%= f.hidden_field :routine_id, value: @routine.id %>
-    <%= f.hidden_field :routine_name, value: @routine.name %>
-    <%= f.submit "終了する", class: "hidden workout-btn", id:"finish-workout-btn" %>
-  <% end  %>
+    <div class="hidden" id="routine-length"><%= @routine.next_routines.length + 1 %></div>
 
-  <div class="hidden" id="inform-finish-workout">
-    <p>お疲れさまでした！</p>
-    <p>終了ボタンを押してください</p>
+    <%= form_with model: @workout, local: true do |f|%>
+      <%= f.hidden_field :workout_date, value: Date.today %>
+      <%= f.hidden_field :routine_id, value: @routine.id %>
+      <%= f.hidden_field :routine_name, value: @routine.name %>
+      <%= f.submit "終了する", class: "hidden workout-btn", id:"finish-workout-btn" %>
+    <% end  %>
+
+    <div class="hidden" id="inform-finish-workout">
+      <p>お疲れさまでした！</p>
+      <p>終了ボタンを押してください</p>
+    </div>
   </div>
 </div>
 
