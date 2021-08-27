@@ -50,43 +50,32 @@ Muscle Time Keeper
 - メイン機能である「トレーニング（ワークアウト）のタイムと休憩（インターバル）のタイムを自動で管理」する機能の説明
 
   - トップページの「ワークアウトを開始」ボタンからトレーニングを実施できます。
-  [![Image from Gyazo](https://i.gyazo.com/8d4e0ba0908d9accb74056916c6dab8c.gif)](https://gyazo.com/8d4e0ba0908d9accb74056916c6dab8c)  
+  ![38348fe424f00024d64413c0cb59cb91](https://user-images.githubusercontent.com/86653175/131168264-23085c95-1bc2-44e5-b2fd-d1355019a651.gif)  
 
-  - 「スタート」ボタンを押すことでカウントダウンが始まります。
-  [![Image from Gyazo](https://i.gyazo.com/bb6d19a70c3aac66fb90a4403b07f69e.gif)](https://gyazo.com/bb6d19a70c3aac66fb90a4403b07f69e)  
-
-  - ワークアウトの残り時間が3秒になるとサウンドがなります（GIFのため聞こえません。）。0秒になるとRest（休憩時間）に切り替わります。
-  [![Image from Gyazo](https://i.gyazo.com/97855eea089c89ae57c06fdc25ab6fa4.gif)](https://gyazo.com/97855eea089c89ae57c06fdc25ab6fa4)  
-
-  - Restの残り時間とセット数が0になり、次のメニューがある場合は自動的に切り替わります。
-  [![Image from Gyazo](https://i.gyazo.com/5fb2af0c61e17c6dfed12b2d82485577.gif)](https://gyazo.com/5fb2af0c61e17c6dfed12b2d82485577)  
+  - Workoutのタイムが0秒になると、Restに自動で切り替わります。
+  ![5baff28ad597290379f97b9ab8d1f2d2](https://user-images.githubusercontent.com/86653175/131168779-e371ce2d-f6d7-4db1-bf26-b5a909969a03.gif)  
 
 - ユーザー管理機能
   - ユーザーを新規登録できます。方法として、「メールアドレスで登録」・「SNSアカウントを用いて登録」の2種類があります。
-  [![Image from Gyazo](https://i.gyazo.com/fce7b0f6fbfd0170a3b9c59fe6ef1ab2.gif)](https://gyazo.com/fce7b0f6fbfd0170a3b9c59fe6ef1ab2)  
-
-  - ログインも「メールアドレスで登録」・「SNSアカウントを用いて登録」の2種類で行えます。
-  [![Image from Gyazo](https://i.gyazo.com/0ae84e0d4a240d07f75401ff0391be15.gif)](https://gyazo.com/0ae84e0d4a240d07f75401ff0391be15)  
+  [![Image from Gyazo](https://i.gyazo.com/17959eefa946e316bb4f9d911a09cf8f.jpg)](https://gyazo.com/17959eefa946e316bb4f9d911a09cf8f)
   
 - オリジナルのルーティンを作成することができる機能
   - 各項目を入力することで作成できます。また公開・非公開を選ぶこともできます。
-  [![Image from Gyazo](https://i.gyazo.com/e6c65e0e18208a48fe00b9af02b7a97b.gif)](https://gyazo.com/e6c65e0e18208a48fe00b9af02b7a97b)  
+  ![2e3dba3bbe754b47ecf58b7827a2a02a](https://user-images.githubusercontent.com/86653175/131169392-90823609-1fbc-4b95-a4ff-6b0d7794e7c3.gif)  
 
   - メニューを追加することもできます。
-  [![Image from Gyazo](https://i.gyazo.com/81ad56bcc6b0aec9d3801d3ee3f45b41.gif)](https://gyazo.com/81ad56bcc6b0aec9d3801d3ee3f45b41)  
-
-  - 全項目を入力し、確認ページで作成を押すことで完了です。
-  [![Image from Gyazo](https://i.gyazo.com/2b5313532f2277c338c464f4d41c4f31.gif)](https://gyazo.com/2b5313532f2277c338c464f4d41c4f31)  
+  ![ec908feb44e73929bccbebfc21e42a16](https://user-images.githubusercontent.com/86653175/131169539-4d097d7b-09c1-4227-b1d0-b110ec8b06f3.gif)  
 
 - 他のユーザーが作成したルーティンを検索できる機能
   - ルーティン名・トレーニング名から検索できます。
-  [![Image from Gyazo](https://i.gyazo.com/beeae3a79637c928447607bbebefaaf9.gif)](https://gyazo.com/beeae3a79637c928447607bbebefaaf9)  
+  ![811eb7df1ce85e869106efeefeeaac27](https://user-images.githubusercontent.com/86653175/131169968-3462945f-1ba0-4433-a3a2-66d21d9a88ba.gif)  
 
   - 詳細ページへ遷移するといいねとダウンロードができます。
-  [![Image from Gyazo](https://i.gyazo.com/c8ba7ae73337f1ab466e3eddf4b4d460.gif)](https://gyazo.com/c8ba7ae73337f1ab466e3eddf4b4d460)  
+  ![75a3a56eb2ed81970d671fe9aefa25fc](https://user-images.githubusercontent.com/86653175/131170235-2e29e0c8-74c1-4d4d-a6fd-a91abeecca65.gif)  
 
 - 日々のトレーニングの進捗状況をカレンダーで管理します
-  [![Image from Gyazo](https://i.gyazo.com/7dfe16f8200566a272d0959a306b1b32.gif)](https://gyazo.com/7dfe16f8200566a272d0959a306b1b32)
+  - 「終了する」を押すとカレンダーに自動でワークアウトの記録が反映されます
+  ![8b031c080dbb4c780f6737dd93acd60c](https://user-images.githubusercontent.com/86653175/131170478-c995eb27-88c5-4913-802f-1638c1c7a893.gif)  
 
 # 実装予定の機能
 - レスポンシブデザインに対応します。
