@@ -69,7 +69,7 @@ function countDownTimer (){
           // (始)WorkoutとRestの文字を入れ替え
           timeElement.classList.add("hidden");
           currentStateElement.innerText = "Rest";
-          currentStateElement.setAttribute("style", "color:#005FFF;")
+          currentStateElement.setAttribute("style", "color:#EEE;")
           restElement.classList.remove("hidden");
           // (終)WorkoutとRestの文字を入れ替え
 
@@ -102,7 +102,7 @@ function countDownTimer (){
               // (始)RestとWorkoutの文字を入れ替え
               timeElement.classList.remove("hidden");
               currentStateElement.innerText = "Workout";
-              currentStateElement.removeAttribute("style", "color:#005FFF;")
+              currentStateElement.removeAttribute("style", "color:#EEE;")
               restElement.classList.add("hidden");
               // (終)RestとWorkoutの文字を入れ替え
 

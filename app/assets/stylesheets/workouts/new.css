@@ -1,8 +1,15 @@
+.workout-new-background {
+  background-position: center bottom;
+}
+
 .workout-wrap {
   text-align: center;
-  height: calc(100vh - 170px);
-  color: #555;
+  min-height: 100vh;
+  color: #EEE;
   padding-top: 40px;
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(119, 119, 119, 0.3);
 }
 
 .workout-name {
@@ -19,9 +26,8 @@
 }
 
 .workout-content {
-  margin: 30px;
-  border-bottom: 1px dashed #AAA;
-  padding-bottom: 20px;
+  border-bottom: 1px dashed #EEE;
+  padding: 30px 30px 20px;
 }
 
 .workout-menu {
@@ -29,13 +35,13 @@
 }
 
 .workout-menu span {
-  color: #0000EE;
+  color: #00FFFF;
 }
 
 .time-wrap {
-  border: 2px solid #AAA;
+  border: 3px solid #EEE;
   border-radius: 15px;
-  width: 30%;
+  width: 40%;
   margin: 20px auto;
   padding: 10px;
 }
@@ -55,7 +61,7 @@
 .last-seconds, .last-set {
   margin: 0 5px;
   font-size: 50px;
-  color: #FF3333;
+  color: #FF0000;
 }
 
 .last-set-wrap {
